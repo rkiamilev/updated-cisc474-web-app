@@ -44,7 +44,7 @@ A repo that you can fork to make new projects
       - Project name: Name according to assignment, e.g., `acbart lms`
       - Database Password: Click the "Generate Password" text, then make sure you securely record the password (e.g., with your browser's automatic password saving features) because you will need it in the next step.
       - Region: `East US (North Virginia)`
-    - You can now get your connection details for this database. Click the "Connect" button at the top of the window, and get the direct connection string. Note that the text `YOUR-PASSWORD` will be in the connection string, and you have to replace it with your Supabase password. You will need the connection string for the next step.
+    - You can now get your connection details for this database. Click the "Connect" button at the top of the window, and get the Transaction Pooler string (not the Direct connection). Note that the text `[YOUR-PASSWORD]` will be in the connection string, and you have to replace it with your Supabase password (make sure the brackets are removed too). You will need the connection string for the next step.
 - Backend:
   - Render: https://render.com/
   - Directions:
@@ -59,9 +59,19 @@ A repo that you can fork to make new projects
     - For Instance Type, choose "Free $0/month"
     - In the Environment Variables, add the following:
       - `DATABASE_URL`: The connection string for your database from the Supabase dashboard
+      - `DIRECT_URL`: The Transaction Pooler connection string for your database from the Supabase dashboard
     - Click the Deploy button
+- Set up your local `.env` file:
+  - Take a look at the details in the Connection string, and replace the information below in a new `.env` file at the same level as this `README.md` file.
 
-If you need to trigger a new deployment for your backend, you can use the `Manual Deploy` button in the topright.
+```
+DATABASE_URL="postgres://postgres.[ref]:[password]@aws-0-[region].pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1"
+DIRECT_URL="postgres://postgres:[pwd]@db.[ref].supabase.co:5432/postgres"
+```
+
+Then, you can make the first push of your initial database setup: `npx prisma db push`
+
+Then you can populate the database with an initial row by using: `npx prisma db seed`
 
 ---
 
