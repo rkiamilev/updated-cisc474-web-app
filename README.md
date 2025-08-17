@@ -6,36 +6,60 @@ A repo that you can fork to make new projects
 
 - Clone this repo
 - NVM and the right version of Node
-    - Install Node.
-    - Make sure you have at least version 22.12.\*, not lower. Run `node -v` to check your version.
-    - Windows: You can have multiple versions of Node using NVM: <https://github.com/coreybutler/nvm-windows>
-    - Mac: You can get NVM to manage multiple versions: https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
-    - Either way, use `nvm list` and `nvm use` to switch between Node versions, and make sure you get onto a version 22.12.\* or higher.
+  - Install Node.
+  - Make sure you have at least version 22.12.\*, not lower. Run `node -v` to check your version.
+  - Windows: You can have multiple versions of Node using NVM: <https://github.com/coreybutler/nvm-windows>
+  - Mac: You can get NVM to manage multiple versions: https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
+  - Either way, use `nvm list` and `nvm use` to switch between Node versions, and make sure you get onto a version 22.12.\* or higher.
 - Install dependencies
-    - `cd` into your cloned project directory
-    - Run `npm install` to install the project dependencies
+  - `cd` into your cloned project directory
+  - Run `npm install` to install the project dependencies
 - Run your site
-    - `npm run dev`
+  - `npm run dev`
 - Docker:
-    - Install Docker Desktop from <https://www.docker.com/products/docker-desktop>
+  - Install Docker Desktop from <https://www.docker.com/products/docker-desktop>
 
 # Deployment
 
+- Frontend:
+  - Vercel: https://vercel.com/
+  - Directions:
+    - Create a Vercel account using your Github
+    - Import your forked repository
+    - Make sure you are happy with the Project Name
+    - In the "Root Directory" field, use `apps/web` (do NOT use `apps/docs`)
+    - Click "Deploy"
+    - You can now access your deployed site at the provided URL
 - Database:
-    - SupaBase Free Tier: https://supabase.com/
-    - Directions:
-        - Start a new project on the Free Tier
-        - Login using your Github
-        - Create a new organization:
-            - Name: Your choice, e.g., `CISC474 F25 Projects` (you can change this later)
-            - Type: `Educational`
-            - Price: `Free - $0/month`
-        - Create a new project:
-            - Organization: Choose your previously selected organization
-            - Project name: Name according to assignment, e.g., `acbart lms`
-            - Database Password: Click the "Generate Password" text, then make sure you securely record the password (e.g., with your browser's automatic password saving features)
-            - Region: `East US (North Virginia)`
-        - You can now get your connection details for this database
+  - SupaBase Free Tier: https://supabase.com/
+  - Directions:
+    - Start a new project on the Free Tier
+    - Login using your Github
+    - Create a new organization:
+      - Name: Your choice, e.g., `CISC474 F25 Projects` (you can change this later)
+      - Type: `Educational`
+      - Price: `Free - $0/month`
+    - Create a new project:
+      - Organization: Choose your previously selected organization
+      - Project name: Name according to assignment, e.g., `acbart lms`
+      - Database Password: Click the "Generate Password" text, then make sure you securely record the password (e.g., with your browser's automatic password saving features) because you will need it in the next step.
+      - Region: `East US (North Virginia)`
+    - You can now get your connection details for this database. Click the "Connect" button at the top of the window, and get the direct connection string. Note that the text `YOUR-PASSWORD` will be in the connection string, and you have to replace it with your Supabase password. You will need the connection string for the next step.
+- Backend:
+  - Render: https://render.com/
+  - Directions:
+    - Sign in to Render using your Github and create an account
+    - Create a new workspace, name it something appropriate for this project
+    - Fill out the survey information about how you will use it, as you see fit
+    - Choose to make a new Web Service
+    - Connect to Github as your Git Provider
+    - Select the repository you want to deploy
+    - Choose "Virginia (US East)" for your Region (not critical)
+    - For your Root Directory, use `apps/api`
+    - For Instance Type, choose "Free $0/month"
+    - In the Environment Variables, add the following:
+      - `DATABASE_URL`: The connection string for your database from the Supabase dashboard
+    - Click the Deploy button
 
 ## What's inside?
 
