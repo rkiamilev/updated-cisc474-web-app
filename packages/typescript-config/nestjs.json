@@ -8,6 +8,10 @@
     "forceConsistentCasingInFileNames": false,
     "incremental": true,
     "module": "commonjs",
+<<<<<<< HEAD
+=======
+    "moduleResolution": "Node10",
+>>>>>>> 1b19f68 (Add in other packages and apps for starter)
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
     "removeComments": true,

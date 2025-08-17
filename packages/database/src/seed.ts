@@ -1,4 +1,5 @@
 import { prisma } from "./client";
+<<<<<<< HEAD
 import { faker } from "@faker-js/faker";
 import "dotenv/config";
 
@@ -80,10 +81,43 @@ async function runSeed() {
     console.log("✅ Seed complete!");
   } catch (error) {
     console.error("❌ Error seeding data:", error);
+=======
+
+import type { User } from "../generated/client";
+
+const DEFAULT_USERS = [
+  // Add your own user to pre-populate the database with
+  {
+    name: "Tim Apple",
+    email: "tim@apple.com",
+  },
+] as Array<Partial<User>>;
+
+(async () => {
+  try {
+    await Promise.all(
+      DEFAULT_USERS.map((user) =>
+        prisma.user.upsert({
+          where: {
+            email: user.email!,
+          },
+          update: {
+            ...user,
+          },
+          create: {
+            ...user,
+          },
+        })
+      )
+    );
+  } catch (error) {
+    console.error(error);
+>>>>>>> 1b19f68 (Add in other packages and apps for starter)
     process.exit(1);
   } finally {
     await prisma.$disconnect();
   }
+<<<<<<< HEAD
 }
 
 runSeed();
@@ -112,3 +146,6 @@ runSeed();
 //     await prisma.$disconnect();
 //   }
 // })();
+=======
+})();
+>>>>>>> 1b19f68 (Add in other packages and apps for starter)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/client"
@@ -39,4 +40,24 @@ model Word {
   examples       String[]
   pronunciation  String?
   id_backup_text String?
+=======
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../generated/client"
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+>>>>>>> 1b19f68 (Add in other packages and apps for starter)
 }
