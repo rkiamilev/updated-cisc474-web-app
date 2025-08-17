@@ -14,7 +14,7 @@ COPY --from=deps /app/node_modules ./node_modules
 RUN npm run build
 
 # Production image, copy only necessary files
-FROM node:2-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 # Don't run production as root
