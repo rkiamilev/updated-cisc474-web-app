@@ -55,7 +55,7 @@ A repo that you can fork to make new projects
     - Connect to Github as your Git Provider
     - Select the repository you want to deploy
     - Choose "Virginia (US East)" for your Region (not critical)
-    - For your Root Directory, use `apps/api`
+    - For your Root Directory, use `./`
     - For Instance Type, choose "Free $0/month"
     - In the Environment Variables, add the following:
       - `DATABASE_URL`: The connection string for your database from the Supabase dashboard
