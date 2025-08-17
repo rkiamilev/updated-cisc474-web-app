@@ -14,6 +14,8 @@ A repo that you can fork to make new projects
 - Install dependencies
     - `cd` into your cloned project directory
     - Run `npm install` to install the project dependencies
+- Run your site
+    - `npm run dev`
 - Docker:
     - Install Docker Desktop from <https://www.docker.com/products/docker-desktop>
 
