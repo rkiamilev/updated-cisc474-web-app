@@ -3,7 +3,8 @@ FROM node:20-alpine AS base
 # Install dependencies only when needed
 FROM base AS deps
 WORKDIR /app
-COPY package.json ../../package-lock.json ./
+COPY ../../package-lock.json ./package-lock.json
+COPY package.json ./
 RUN npm ci --legacy-peer-deps
 
 # Build the app
