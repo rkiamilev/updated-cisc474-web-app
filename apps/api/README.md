@@ -13,6 +13,10 @@ By default, your server will run at [http://localhost:3000](http://localhost:300
 You can start editing the demo **APIs** by modifying [linksService](./src/links/links.service.ts) provider.
 
 ### ⚠️ Note about build
+<<<<<<< HEAD
+=======
+ç
+>>>>>>> 0dfc7c8 (render push)
 If you plan to only build this app. Please make sure you've built the packages first.
 
 ## Learn More
