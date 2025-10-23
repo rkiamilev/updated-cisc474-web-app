@@ -56,9 +56,35 @@ generator client {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            BigInt    @id @default(autoincrement())
   name          String?
-  email         String?   @unique
+  email         String   @unique
   emailVerified DateTime?
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
+  role          String    @default("student")
+
+}
+
+model Article {
+  id          BigInt    @id @default(autoincrement())  // ← Add @id here
+  title       String    @unique
+  content     String
+  difficulty  String
+  wordCount   Int
+  readingTime Int
+  source      String?
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+}
+
+model Word {
+  id             BigInt   @id @default(autoincrement())  // ← Add @id here
+  word           String   @unique
+  translation    String
+  definition     String
+  partOfSpeech   String
+  frequency      Int
+  examples       String[]
+  pronunciation  String?
+  id_backup_text String?
 }
