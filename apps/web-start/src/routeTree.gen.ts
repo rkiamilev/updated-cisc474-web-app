@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppVocabularyRouteImport } from './routes/app/vocabulary'
+import { Route as AppReadingListRouteImport } from './routes/app/reading-list'
+import { Route as AppProfileRouteImport } from './routes/app/profile'
+import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
+import { Route as AppAppRouteImport } from './routes/app/app'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppVocabularyRoute = AppVocabularyRouteImport.update({
+  id: '/app/vocabulary',
+  path: '/app/vocabulary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppReadingListRoute = AppReadingListRouteImport.update({
+  id: '/app/reading-list',
+  path: '/app/reading-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppProfileRoute = AppProfileRouteImport.update({
+  id: '/app/profile',
+  path: '/app/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppDashboardRoute = AppDashboardRouteImport.update({
+  id: '/app/dashboard',
+  path: '/app/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAppRoute = AppAppRouteImport.update({
+  id: '/app/app',
+  path: '/app/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app/app': typeof AppAppRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reading-list': typeof AppReadingListRoute
+  '/app/vocabulary': typeof AppVocabularyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/app/app': typeof AppAppRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reading-list': typeof AppReadingListRoute
+  '/app/vocabulary': typeof AppVocabularyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app/app': typeof AppAppRoute
+  '/app/dashboard': typeof AppDashboardRoute
+  '/app/profile': typeof AppProfileRoute
+  '/app/reading-list': typeof AppReadingListRoute
+  '/app/vocabulary': typeof AppVocabularyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app/app'
+    | '/app/dashboard'
+    | '/app/profile'
+    | '/app/reading-list'
+    | '/app/vocabulary'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/app/app'
+    | '/app/dashboard'
+    | '/app/profile'
+    | '/app/reading-list'
+    | '/app/vocabulary'
+  id:
+    | '__root__'
+    | '/'
+    | '/app/app'
+    | '/app/dashboard'
+    | '/app/profile'
+    | '/app/reading-list'
+    | '/app/vocabulary'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppAppRoute: typeof AppAppRoute
+  AppDashboardRoute: typeof AppDashboardRoute
+  AppProfileRoute: typeof AppProfileRoute
+  AppReadingListRoute: typeof AppReadingListRoute
+  AppVocabularyRoute: typeof AppVocabularyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/vocabulary': {
+      id: '/app/vocabulary'
+      path: '/app/vocabulary'
+      fullPath: '/app/vocabulary'
+      preLoaderRoute: typeof AppVocabularyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/reading-list': {
+      id: '/app/reading-list'
+      path: '/app/reading-list'
+      fullPath: '/app/reading-list'
+      preLoaderRoute: typeof AppReadingListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/profile': {
+      id: '/app/profile'
+      path: '/app/profile'
+      fullPath: '/app/profile'
+      preLoaderRoute: typeof AppProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/dashboard': {
+      id: '/app/dashboard'
+      path: '/app/dashboard'
+      fullPath: '/app/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/app': {
+      id: '/app/app'
+      path: '/app/app'
+      fullPath: '/app/app'
+      preLoaderRoute: typeof AppAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppAppRoute: AppAppRoute,
+  AppDashboardRoute: AppDashboardRoute,
+  AppProfileRoute: AppProfileRoute,
+  AppReadingListRoute: AppReadingListRoute,
+  AppVocabularyRoute: AppVocabularyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
