@@ -1,7 +1,10 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
 
+<<<<<<< HEAD
 import { ChevronUp, User2 } from "lucide-react"
 
+=======
+>>>>>>> 0a348ea (added sidebar to frontend)
 import {
   Sidebar,
   SidebarContent,
@@ -11,6 +14,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+<<<<<<< HEAD
   SidebarFooter,
 } from "@/components/ui/sidebar"
 
@@ -20,6 +24,10 @@ import {
     DropdownMenuContent,
     DropdownMenuItem
 } from "@/components/ui/dropdown-menu"
+=======
+} from "@/components/ui/sidebar"
+
+>>>>>>> 0a348ea (added sidebar to frontend)
 
 // Menu items.
 const items = [
@@ -52,7 +60,11 @@ const items = [
  
 export function AppSidebar() {
   return (
+<<<<<<< HEAD
     <Sidebar variant="sidebar">
+=======
+    <Sidebar>
+>>>>>>> 0a348ea (added sidebar to frontend)
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -72,6 +84,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+<<<<<<< HEAD
       <SidebarFooter>
           <SidebarMenu>
             <SidebarMenuItem>
@@ -100,6 +113,8 @@ export function AppSidebar() {
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarFooter>
+=======
+>>>>>>> 0a348ea (added sidebar to frontend)
     </Sidebar>
   )
 }
