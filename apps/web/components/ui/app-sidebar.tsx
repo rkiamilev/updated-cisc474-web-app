@@ -2,11 +2,6 @@ import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
 
 import { ChevronUp, User2 } from "lucide-react"
 
-<<<<<<< HEAD
-import { ChevronUp, User2 } from "lucide-react"
-
-=======
->>>>>>> 0a348ea (added sidebar to frontend)
 import {
   Sidebar,
   SidebarContent,

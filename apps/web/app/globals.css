@@ -1,14 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-<<<<<<< HEAD
 
 @custom-variant dark (&:is(.dark *));
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-=======
->>>>>>> 0a348ea (added sidebar to frontend)
 
 @custom-variant dark (&:is(.dark *));
 

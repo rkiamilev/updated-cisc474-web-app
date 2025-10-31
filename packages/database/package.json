@@ -1,7 +1,6 @@
 {
   "name": "@repo/database",
   "version": "1.0.0",
-<<<<<<< HEAD
   "main": "./dist/client.js",
   "module": "./dist/client.mjs",
   "types": "./dist/client.d.ts",
@@ -11,23 +10,15 @@
       "require": "./dist/client.js",
       "import": "./dist/client.mjs"
     }
-=======
-  "exports": {
-    ".": "./src/client.ts"
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
   },
   "scripts": {
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx src/seed.ts",
-<<<<<<< HEAD
     "types": "tsc -p tsconfig.types.json",
     "dev": "tsup src/* --format cjs,esm --watch --onSuccess \"npm run types\"",
     "build": "tsup src/* --format cjs,esm && npm run types",
-=======
-    "dev": "tsup src/* --watch",
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
     "format": "prisma format",
     "generate": "prisma generate",
     "lint": "eslint . --max-warnings 0",
