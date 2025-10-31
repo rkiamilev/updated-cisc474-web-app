@@ -1,0 +1,33 @@
+
+
+> @repo/api@0.0.0 build
+> tsc -b -v
+
+[[90m12:47:47 PM[0m] Projects in this build: 
+    * tsconfig.json
+
+[[90m12:47:47 PM[0m] Project 'tsconfig.json' is out of date because output file 'dist/index.js' does not exist
+
+[[90m12:47:47 PM[0m] Building project '/Users/rickykiamilev/src/updated-cisc474-web-app/packages/api/tsconfig.json'...
+
+[96msrc/index.ts[0m:[93m3[0m:[93m31[0m - [91merror[0m[90m TS2307: [0mCannot find module 'links/dto/create-link.dto' or its corresponding type declarations.
+
+[7m3[0m import { CreateLinkDto } from 'links/dto/create-link.dto';
+[7m [0m [91m                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/index.ts[0m:[93m4[0m:[93m31[0m - [91merror[0m[90m TS2307: [0mCannot find module 'links/dto/update-link.dto' or its corresponding type declarations.
+
+[7m4[0m import { UpdateLinkDto } from 'links/dto/update-link.dto';
+[7m [0m [91m                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 2 errors.
+
+⠙[1G[0K[1mnpm[22m [31merror[39m Lifecycle script `build` failed with error:
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mcode[39m [33m1[39m
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mpath[39m /Users/rickykiamilev/src/updated-cisc474-web-app/packages/api
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mworkspace[39m @repo/api@0.0.0
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mlocation[39m /Users/rickykiamilev/src/updated-cisc474-web-app/packages/api
+⠙[1G[0K[1mnpm[22m [31merror[39m command failed
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mcommand[39m sh -c tsc -b -v
+⠙[1G[0K
