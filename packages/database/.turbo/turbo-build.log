@@ -1,0 +1,40 @@
+
+
+> @repo/database@1.0.0 prebuild
+> npm run generate
+
+
+> @repo/database@1.0.0 generate
+> prisma generate
+
+[2mPrisma schema loaded from prisma/schema.prisma[22m
+
+
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 74ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+
+⠙[1G[0K⠙[1G[0K
+> @repo/database@1.0.0 build
+> tsup src/* --format cjs,esm && npm run types
+
+⠙[1G[0K[34mCLI[39m Building entry: src/client.ts, src/seed.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Target: es2022
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mESM[39m [1mdist/client.mjs         [22m[32m70.00 B[39m
+[32mESM[39m [1mdist/chunk-QXMKNCQI.mjs [22m[32m281.54 KB[39m
+[32mESM[39m [1mdist/seed.mjs           [22m[32m545.06 KB[39m
+[32mESM[39m ⚡️ Build success in 194ms
+[32mCJS[39m [1mdist/client.js [22m[32m281.34 KB[39m
+[32mCJS[39m [1mdist/seed.js   [22m[32m839.89 KB[39m
+[32mCJS[39m ⚡️ Build success in 195ms
+
+> @repo/database@1.0.0 types
+> tsc -p tsconfig.types.json
+
+⠙[1G[0K⠙[1G[0K
