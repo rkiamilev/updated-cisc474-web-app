@@ -2,6 +2,7 @@ import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { Sidebar } from "@/components/ui/sidebar";
 
 // type Props = Omit<ImageProps, "src"> & {
 //     srcLight: string;
@@ -26,14 +27,7 @@ export default function Home() {
             <p className={styles.description}>
                 Get started by editing <code className={styles.code}>apps/web/app/page.tsx</code>
             </p>
-            <div className={styles.buttons}>
-                <Link href="/about">
-                    <Button variant="primary">About Page</Button>
-                </Link>
-                <Link href="/dashboard">
-                    <Button variant="secondary">Dashboard Page</Button>
-                </Link>
-            </div>
+            
         </div>
     );
 }

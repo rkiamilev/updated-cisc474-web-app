@@ -1,5 +1,7 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
 
+import { ChevronUp, User2 } from "lucide-react"
+
 <<<<<<< HEAD
 import { ChevronUp, User2 } from "lucide-react"
 
@@ -27,7 +29,12 @@ import {
 =======
 } from "@/components/ui/sidebar"
 
->>>>>>> 0a348ea (added sidebar to frontend)
+import { 
+    DropdownMenu, 
+    DropdownMenuTrigger, 
+    DropdownMenuContent,
+    DropdownMenuItem
+} from "@/components/ui/dropdown-menu"
 
 // Menu items.
 const items = [
@@ -60,11 +67,7 @@ const items = [
  
 export function AppSidebar() {
   return (
-<<<<<<< HEAD
-    <Sidebar variant="sidebar">
-=======
     <Sidebar>
->>>>>>> 0a348ea (added sidebar to frontend)
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
