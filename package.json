@@ -1,5 +1,5 @@
 {
-  "name": "cisc474-project-starter",
+  "name": "updated-cisc474-web-app",
   "private": true,
   "scripts": {
     "build": "turbo run build",
