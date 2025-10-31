@@ -122,9 +122,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  firstName: 'firstName',
-  lastName: 'lastName',
+  name: 'name',
   email: 'email',
+  emailVerified: 'emailVerified',
   role: 'role'
 };
 
@@ -133,12 +133,14 @@ exports.Prisma.ArticleScalarFieldEnum = {
   title: 'title',
   content: 'content',
   difficulty: 'difficulty',
-  author: 'author',
+  wordCount: 'wordCount',
+  readingTime: 'readingTime',
+  source: 'source',
   publishedAt: 'publishedAt',
   createdAt: 'createdAt'
 };
 
-exports.Prisma.WordsScalarFieldEnum = {
+exports.Prisma.WordScalarFieldEnum = {
   id: 'id',
   word: 'word',
   translation: 'translation',
@@ -146,7 +148,8 @@ exports.Prisma.WordsScalarFieldEnum = {
   partOfSpeech: 'partOfSpeech',
   frequency: 'frequency',
   examples: 'examples',
-  pronunciation: 'pronunciation'
+  pronunciation: 'pronunciation',
+  id_backup_text: 'id_backup_text'
 };
 
 exports.Prisma.SortOrder = {
@@ -168,7 +171,7 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   User: 'User',
   Article: 'Article',
-  Words: 'Words'
+  Word: 'Word'
 };
 
 /**

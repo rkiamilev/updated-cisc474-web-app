@@ -6,3 +6,55 @@
 > @repo/database@1.0.0 generate
 > prisma generate
 
+[2mPrisma schema loaded from prisma/schema.prisma[22m
+
+✔ Generated [1mPrisma Client[22m (v6.18.0)[2m to ./generated/client[22m in 73ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+
+⠙[1G[0K⠙[1G[0K
+> @repo/database@1.0.0 dev
+> tsup src/* --format cjs,esm --watch --onSuccess "npm run types"
+
+⠙[1G[0K[34mCLI[39m Building entry: src/seed.ts
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Running in watch mode
+[34mCLI[39m Target: node16
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mUnexpected "<<"[0m
+
+    src/seed.ts:115:0:
+[37m      115 │ [32m<<[37m<<<<< HEAD
+          ╵ [32m~~[0m
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mUnexpected "<<"[0m
+
+    src/seed.ts:115:0:
+[37m      115 │ [32m<<[37m<<<<< HEAD
+          ╵ [32m~~[0m
+
+[31mESM[39m [31mBuild failed[39m
+[31mError: Build failed with 1 error:
+src/seed.ts:115:0: ERROR: Unexpected "<<"
+    at failureErrorWithLog (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:1467:15)
+    at /Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:924:7)
+    at /Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:951:16
+    at responseCallbacks.<computed> (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:603:9)
+    at handleIncomingPacket (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:658:12)
+    at Socket.readFromStdout (/Users/rickykiamilev/src/updated-cisc474-web-app/node_modules/tsup/node_modules/esbuild/lib/main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)[39m
+[31mCJS[39m [31mBuild failed[39m
+⠙[1G[0K[1mnpm[22m [31merror[39m Lifecycle script `dev` failed with error:
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mcode[39m [33m1[39m
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mpath[39m /Users/rickykiamilev/src/updated-cisc474-web-app/packages/database
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mworkspace[39m @repo/database@1.0.0
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mlocation[39m /Users/rickykiamilev/src/updated-cisc474-web-app/packages/database
+⠙[1G[0K[1mnpm[22m [31merror[39m command failed
+⠙[1G[0K[1mnpm[22m [31merror[39m [94mcommand[39m sh -c tsup src/* --format cjs,esm --watch --onSuccess "npm run types"
+⠙[1G[0K

@@ -94,9 +94,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  firstName: 'firstName',
-  lastName: 'lastName',
+  name: 'name',
   email: 'email',
+  emailVerified: 'emailVerified',
   role: 'role'
 };
 
@@ -105,12 +105,14 @@ exports.Prisma.ArticleScalarFieldEnum = {
   title: 'title',
   content: 'content',
   difficulty: 'difficulty',
-  author: 'author',
+  wordCount: 'wordCount',
+  readingTime: 'readingTime',
+  source: 'source',
   publishedAt: 'publishedAt',
   createdAt: 'createdAt'
 };
 
-exports.Prisma.WordsScalarFieldEnum = {
+exports.Prisma.WordScalarFieldEnum = {
   id: 'id',
   word: 'word',
   translation: 'translation',
@@ -118,7 +120,8 @@ exports.Prisma.WordsScalarFieldEnum = {
   partOfSpeech: 'partOfSpeech',
   frequency: 'frequency',
   examples: 'examples',
-  pronunciation: 'pronunciation'
+  pronunciation: 'pronunciation',
+  id_backup_text: 'id_backup_text'
 };
 
 exports.Prisma.SortOrder = {
@@ -140,7 +143,7 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   User: 'User',
   Article: 'Article',
-  Words: 'Words'
+  Word: 'Word'
 };
 /**
  * Create the Client
@@ -171,7 +174,8 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": null,
+    "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.18.0",
@@ -189,13 +193,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/client\"\n}\n\nmodel User {\n  id        Int    @id @default(autoincrement())\n  firstName String\n  lastName  String\n  email     String @unique\n  role      String @default(\"student\")\n}\n\nmodel Article {\n  id          Int       @id @default(autoincrement())\n  title       String\n  content     String\n  difficulty  String\n  author      String?\n  publishedAt DateTime  @default(now())\n  createdAt   DateTime?\n}\n\nmodel Words {\n  id            Int      @id @default(autoincrement())\n  word          String   @unique\n  translation   String\n  definition    String\n  partOfSpeech  String\n  frequency     Int\n  examples      String[]\n  pronunciation String\n}\n",
-  "inlineSchemaHash": "a930495fe4b33f1396cf88c8a9fb0304f76d75c38aed2024efd4e1d3b3f58828",
+  "inlineSchema": "datasource db {\n  provider  = \"postgresql\"\n  url       = env(\"DATABASE_URL\")\n  directUrl = env(\"DIRECT_URL\")\n}\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/client\"\n}\n\nmodel User {\n  id            BigInt    @id @default(autoincrement())\n  name          String?\n  email         String    @unique\n  emailVerified DateTime?\n  role          String    @default(\"student\")\n}\n\nmodel Article {\n  id          BigInt    @id @default(autoincrement())\n  title       String    @unique\n  content     String\n  difficulty  String\n  wordCount   Int\n  readingTime Int\n  source      String?\n  publishedAt DateTime?\n  createdAt   DateTime  @default(now())\n}\n\nmodel Word {\n  id             BigInt   @id @default(autoincrement())\n  word           String   @unique\n  translation    String\n  definition     String\n  partOfSpeech   String\n  frequency      Int\n  examples       String[]\n  pronunciation  String?\n  id_backup_text String?\n}\n",
+  "inlineSchemaHash": "cddfa35d95230e9ac6dfdd2a8907861a20d613da3921bad5177f15691eb1209e",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"firstName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"lastName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"role\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Article\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"content\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"difficulty\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"author\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"publishedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Words\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"word\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"translation\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"definition\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"partOfSpeech\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"frequency\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"examples\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"pronunciation\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"BigInt\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"emailVerified\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"role\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Article\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"BigInt\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"content\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"difficulty\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"wordCount\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"readingTime\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"source\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"publishedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"Word\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"BigInt\"},{\"name\":\"word\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"translation\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"definition\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"partOfSpeech\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"frequency\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"examples\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"pronunciation\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"id_backup_text\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

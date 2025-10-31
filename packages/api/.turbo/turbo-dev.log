@@ -1,17 +1,30 @@
 
 > @repo/api@0.0.0 dev
-> npm run build -- --watch
+> tsup src/* --format cjs,esm --watch --onSuccess "npm run types"
 
+[34mCLI[39m Building entry: src/index.ts, src/links/dto/create-link.dto.ts, src/links/dto/update-link.dto.ts, src/links/entities/link.entity.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Running in watch mode
+[34mCLI[39m Target: es2022
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs             [22m[32m96.00 B[39m
+[32mESM[39m [1mdist/index.mjs                      [22m[32m291.00 B[39m
+[32mESM[39m [1mdist/links/entities/link.entity.mjs [22m[32m70.00 B[39m
+[32mESM[39m [1mdist/chunk-XHCQAKNT.mjs             [22m[32m306.00 B[39m
+[32mESM[39m [1mdist/links/dto/create-link.dto.mjs  [22m[32m88.00 B[39m
+[32mESM[39m [1mdist/links/dto/update-link.dto.mjs  [22m[32m123.00 B[39m
+[32mESM[39m [1mdist/chunk-3SFKBB2Y.mjs             [22m[32m240.00 B[39m
+[32mESM[39m ⚡️ Build success in 44ms
+[32mCJS[39m [1mdist/links/dto/create-link.dto.js  [22m[32m1.11 KB[39m
+[32mCJS[39m [1mdist/links/dto/update-link.dto.js  [22m[32m1.33 KB[39m
+[32mCJS[39m [1mdist/index.js                      [22m[32m1.65 KB[39m
+[32mCJS[39m [1mdist/links/entities/link.entity.js [22m[32m1.29 KB[39m
+[32mCJS[39m ⚡️ Build success in 44ms
+[34mCLI[39m Watching for changes in "."
+[34mCLI[39m Ignoring changes in "**/{.git,node_modules}/**" | "dist"
 
-> @repo/api@0.0.0 build
-> tsc -b -v --watch
-
-c[[90m4:52:31 PM[0m] Starting compilation in watch mode...
-
-[[90m4:52:31 PM[0m] Projects in this build: 
-    * tsconfig.json
-
-[[90m4:52:31 PM[0m] Project 'tsconfig.json' is out of date because output file 'dist/index.js' does not exist
-
-[[90m4:52:31 PM[0m] Building project '/Users/rickykiamilev/src/updated-cisc474-web-app/packages/api/tsconfig.json'...
+> @repo/api@0.0.0 types
+> tsc -p tsconfig.types.json
 

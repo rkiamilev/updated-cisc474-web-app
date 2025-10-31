@@ -4,7 +4,6 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-<<<<<<< HEAD
     "types": "tsc -p tsconfig.types.json",
     "dev": "tsup src/* --format cjs,esm --watch --onSuccess \"npm run types\"",
     "build": "tsup src/* --format cjs,esm && npm run types",
@@ -12,13 +11,6 @@
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-=======
-    "dev": "npm run build -- --watch",
-    "build": "tsc -b -v",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
-  },
-  "main": "./dist/index.js",
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
   "types": "./dist/index.d.ts",
   "files": [
     "./dist/**"
@@ -35,29 +27,19 @@
   },
   "exports": {
     ".": {
-<<<<<<< HEAD
       "types": "./dist/index.d.ts",
-=======
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
     "./*": {
-<<<<<<< HEAD
       "types": "./dist/*.d.ts",
-=======
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
       "import": "./dist/*.js",
       "require": "./dist/*.js"
     }
   },
   "dependencies": {
-<<<<<<< HEAD
     "@nestjs/mapped-types": "*",
     "zod": "^4.1.11"
-=======
-    "@nestjs/mapped-types": "*"
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

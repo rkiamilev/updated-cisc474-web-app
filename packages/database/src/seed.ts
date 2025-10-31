@@ -1,8 +1,9 @@
-import { prisma } from "./client";
+import { PrismaClient } from "../generated/client"
+import { Prisma } from "../generated/client";
 import { faker } from "@faker-js/faker";
 import "dotenv/config";
 
-import type { Prisma, User } from "../generated/client";
+const Prisma = new PrismaClient();
 
 const RUSSIAN_WORDS: Prisma.WordCreateManyInput[] = [
 { word: "дом", translation: "house/home", definition: "dwelling", partOfSpeech: "noun", pronunciation: "dom", frequency: 700, examples: [] },
@@ -52,73 +53,11 @@ for (let i = 0; i < 5; i++) {
 
 
 
-// # Seed function
-
-async function runSeed() {
-  try {
-    console.log("🧹 Clearing old data...");
-    await prisma.article.deleteMany();
-    await prisma.word.deleteMany();
-    await prisma.user.deleteMany();
-
-    console.log("🌱 Seeding users...");
-
-    for (const user of DEFAULT_USERS) {
-      await prisma.user.upsert({
-        where: { email: user.email! },
-        update: { ...user },
-        create: { ...user },
-      });
-    }
-
-    console.log("📚 Seeding words...");
-    await prisma.word.createMany({ data: RUSSIAN_WORDS });
-
-    console.log("📰 Seeding articles...");
-    await prisma.article.createMany({ data: SAMPLE_ARTICLES });
-
-    console.log("✅ Seed complete!");
-  } catch (error) {
-    console.error("❌ Error seeding data:", error);
-    process.exit(1);
-  } finally {
-    await prisma.$disconnect();
-  }
-}
-
-runSeed();
-
-// (async () => {
-//   try {
-//     await Promise.all(
-//       DEFAULT_USERS.map((user) =>
-//         prisma.user.upsert({
-//           where: {
-//             email: user.email!,
-//           },
-//           update: {
-//             ...user,
-//           },
-//           create: {
-//             ...user,
-//           },
-//         })
-//       )
-//     );
-//   } catch (error) {
-//     console.error(error);
-//     process.exit(1);
-//   } finally {
-//     await prisma.$disconnect();
-//   }
-// })();
-<<<<<<< HEAD
-
 (async () => {
   try {
     await Promise.all(
       DEFAULT_USERS.map((user) =>
-        prisma.user.upsert({
+        Prisma.user.upsert({
           where: {
             email: user.email!,
           },
@@ -133,42 +72,8 @@ runSeed();
     );
   } catch (error) {
     console.error(error);
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
     process.exit(1);
   } finally {
-    await prisma.$disconnect();
+    await Prisma.$disconnect();
   }
-<<<<<<< HEAD
-}
-
-runSeed();
-
-// (async () => {
-//   try {
-//     await Promise.all(
-//       DEFAULT_USERS.map((user) =>
-//         prisma.user.upsert({
-//           where: {
-//             email: user.email!,
-//           },
-//           update: {
-//             ...user,
-//           },
-//           create: {
-//             ...user,
-//           },
-//         })
-//       )
-//     );
-//   } catch (error) {
-//     console.error(error);
-//     process.exit(1);
-//   } finally {
-//     await prisma.$disconnect();
-//   }
-// })();
-=======
 })();
->>>>>>> 1b19f68 (Add in other packages and apps for starter)
-=======
->>>>>>> b575254 (will install shadecn ui)

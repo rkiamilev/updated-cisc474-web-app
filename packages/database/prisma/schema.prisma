@@ -1,59 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b575254 (will install shadecn ui)
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/client"
-}
-<<<<<<< HEAD
-
-datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
-}
-
-model User {
-  id            BigInt    @id @default(autoincrement())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  role          String    @default("student")
-}
-
-model Article {
-  id          BigInt    @id @default(autoincrement())
-  title       String    @unique
-  content     String
-  difficulty  String
-  wordCount   Int
-  readingTime Int
-  source      String?
-  publishedAt DateTime?
-  createdAt   DateTime  @default(now())
-}
-
-model Word {
-  id             BigInt   @id @default(autoincrement())
-  word           String   @unique
-  translation    String
-  definition     String
-  partOfSpeech   String
-  frequency      Int
-  examples       String[]
-  pronunciation  String?
-  id_backup_text String?
-=======
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-=======
->>>>>>> b575254 (will install shadecn ui)
-
-datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 model User {

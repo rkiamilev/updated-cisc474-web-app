@@ -24,10 +24,10 @@ export type User = $Result.DefaultSelection<Prisma.$UserPayload>
  */
 export type Article = $Result.DefaultSelection<Prisma.$ArticlePayload>
 /**
- * Model Words
+ * Model Word
  * 
  */
-export type Words = $Result.DefaultSelection<Prisma.$WordsPayload>
+export type Word = $Result.DefaultSelection<Prisma.$WordPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -168,14 +168,14 @@ export class PrismaClient<
   get article(): Prisma.ArticleDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.words`: Exposes CRUD operations for the **Words** model.
+   * `prisma.word`: Exposes CRUD operations for the **Word** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Words
-    * const words = await prisma.words.findMany()
+    * const words = await prisma.word.findMany()
     * ```
     */
-  get words(): Prisma.WordsDelegate<ExtArgs, ClientOptions>;
+  get word(): Prisma.WordDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -619,7 +619,7 @@ export namespace Prisma {
   export const ModelName: {
     User: 'User',
     Article: 'Article',
-    Words: 'Words'
+    Word: 'Word'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -638,7 +638,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "article" | "words"
+      modelProps: "user" | "article" | "word"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -790,77 +790,77 @@ export namespace Prisma {
           }
         }
       }
-      Words: {
-        payload: Prisma.$WordsPayload<ExtArgs>
-        fields: Prisma.WordsFieldRefs
+      Word: {
+        payload: Prisma.$WordPayload<ExtArgs>
+        fields: Prisma.WordFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.WordsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload> | null
+            args: Prisma.WordFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.WordsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           findFirst: {
-            args: Prisma.WordsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload> | null
+            args: Prisma.WordFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.WordsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           findMany: {
-            args: Prisma.WordsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>[]
+            args: Prisma.WordFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>[]
           }
           create: {
-            args: Prisma.WordsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           createMany: {
-            args: Prisma.WordsCreateManyArgs<ExtArgs>
+            args: Prisma.WordCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.WordsCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>[]
+            args: Prisma.WordCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>[]
           }
           delete: {
-            args: Prisma.WordsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           update: {
-            args: Prisma.WordsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           deleteMany: {
-            args: Prisma.WordsDeleteManyArgs<ExtArgs>
+            args: Prisma.WordDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.WordsUpdateManyArgs<ExtArgs>
+            args: Prisma.WordUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.WordsUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>[]
+            args: Prisma.WordUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>[]
           }
           upsert: {
-            args: Prisma.WordsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WordsPayload>
+            args: Prisma.WordUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WordPayload>
           }
           aggregate: {
-            args: Prisma.WordsAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateWords>
+            args: Prisma.WordAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWord>
           }
           groupBy: {
-            args: Prisma.WordsGroupByArgs<ExtArgs>
-            result: $Utils.Optional<WordsGroupByOutputType>[]
+            args: Prisma.WordGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WordGroupByOutputType>[]
           }
           count: {
-            args: Prisma.WordsCountArgs<ExtArgs>
-            result: $Utils.Optional<WordsCountAggregateOutputType> | number
+            args: Prisma.WordCountArgs<ExtArgs>
+            result: $Utils.Optional<WordCountAggregateOutputType> | number
           }
         }
       }
@@ -962,7 +962,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     user?: UserOmit
     article?: ArticleOmit
-    words?: WordsOmit
+    word?: WordOmit
   }
 
   /* Types for Logging */
@@ -1060,30 +1060,30 @@ export namespace Prisma {
   }
 
   export type UserSumAggregateOutputType = {
-    id: number | null
+    id: bigint | null
   }
 
   export type UserMinAggregateOutputType = {
-    id: number | null
-    firstName: string | null
-    lastName: string | null
+    id: bigint | null
+    name: string | null
     email: string | null
+    emailVerified: Date | null
     role: string | null
   }
 
   export type UserMaxAggregateOutputType = {
-    id: number | null
-    firstName: string | null
-    lastName: string | null
+    id: bigint | null
+    name: string | null
     email: string | null
+    emailVerified: Date | null
     role: string | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
-    firstName: number
-    lastName: number
+    name: number
     email: number
+    emailVerified: number
     role: number
     _all: number
   }
@@ -1099,25 +1099,25 @@ export namespace Prisma {
 
   export type UserMinAggregateInputType = {
     id?: true
-    firstName?: true
-    lastName?: true
+    name?: true
     email?: true
+    emailVerified?: true
     role?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
-    firstName?: true
-    lastName?: true
+    name?: true
     email?: true
+    emailVerified?: true
     role?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
-    firstName?: true
-    lastName?: true
+    name?: true
     email?: true
+    emailVerified?: true
     role?: true
     _all?: true
   }
@@ -1209,10 +1209,10 @@ export namespace Prisma {
   }
 
   export type UserGroupByOutputType = {
-    id: number
-    firstName: string
-    lastName: string
+    id: bigint
+    name: string | null
     email: string
+    emailVerified: Date | null
     role: string
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
@@ -1237,46 +1237,46 @@ export namespace Prisma {
 
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    firstName?: boolean
-    lastName?: boolean
+    name?: boolean
     email?: boolean
+    emailVerified?: boolean
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    firstName?: boolean
-    lastName?: boolean
+    name?: boolean
     email?: boolean
+    emailVerified?: boolean
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    firstName?: boolean
-    lastName?: boolean
+    name?: boolean
     email?: boolean
+    emailVerified?: boolean
     role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
-    firstName?: boolean
-    lastName?: boolean
+    name?: boolean
     email?: boolean
+    emailVerified?: boolean
     role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "role", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "emailVerified" | "role", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: number
-      firstName: string
-      lastName: string
+      id: bigint
+      name: string | null
       email: string
+      emailVerified: Date | null
       role: string
     }, ExtArgs["result"]["user"]>
     composites: {}
@@ -1701,10 +1701,10 @@ export namespace Prisma {
    * Fields of the User model
    */
   interface UserFieldRefs {
-    readonly id: FieldRef<"User", 'Int'>
-    readonly firstName: FieldRef<"User", 'String'>
-    readonly lastName: FieldRef<"User", 'String'>
+    readonly id: FieldRef<"User", 'BigInt'>
+    readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
+    readonly emailVerified: FieldRef<"User", 'DateTime'>
     readonly role: FieldRef<"User", 'String'>
   }
     
@@ -2086,28 +2086,36 @@ export namespace Prisma {
 
   export type ArticleAvgAggregateOutputType = {
     id: number | null
+    wordCount: number | null
+    readingTime: number | null
   }
 
   export type ArticleSumAggregateOutputType = {
-    id: number | null
+    id: bigint | null
+    wordCount: number | null
+    readingTime: number | null
   }
 
   export type ArticleMinAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     title: string | null
     content: string | null
     difficulty: string | null
-    author: string | null
+    wordCount: number | null
+    readingTime: number | null
+    source: string | null
     publishedAt: Date | null
     createdAt: Date | null
   }
 
   export type ArticleMaxAggregateOutputType = {
-    id: number | null
+    id: bigint | null
     title: string | null
     content: string | null
     difficulty: string | null
-    author: string | null
+    wordCount: number | null
+    readingTime: number | null
+    source: string | null
     publishedAt: Date | null
     createdAt: Date | null
   }
@@ -2117,7 +2125,9 @@ export namespace Prisma {
     title: number
     content: number
     difficulty: number
-    author: number
+    wordCount: number
+    readingTime: number
+    source: number
     publishedAt: number
     createdAt: number
     _all: number
@@ -2126,10 +2136,14 @@ export namespace Prisma {
 
   export type ArticleAvgAggregateInputType = {
     id?: true
+    wordCount?: true
+    readingTime?: true
   }
 
   export type ArticleSumAggregateInputType = {
     id?: true
+    wordCount?: true
+    readingTime?: true
   }
 
   export type ArticleMinAggregateInputType = {
@@ -2137,7 +2151,9 @@ export namespace Prisma {
     title?: true
     content?: true
     difficulty?: true
-    author?: true
+    wordCount?: true
+    readingTime?: true
+    source?: true
     publishedAt?: true
     createdAt?: true
   }
@@ -2147,7 +2163,9 @@ export namespace Prisma {
     title?: true
     content?: true
     difficulty?: true
-    author?: true
+    wordCount?: true
+    readingTime?: true
+    source?: true
     publishedAt?: true
     createdAt?: true
   }
@@ -2157,7 +2175,9 @@ export namespace Prisma {
     title?: true
     content?: true
     difficulty?: true
-    author?: true
+    wordCount?: true
+    readingTime?: true
+    source?: true
     publishedAt?: true
     createdAt?: true
     _all?: true
@@ -2250,13 +2270,15 @@ export namespace Prisma {
   }
 
   export type ArticleGroupByOutputType = {
-    id: number
+    id: bigint
     title: string
     content: string
     difficulty: string
-    author: string | null
-    publishedAt: Date
-    createdAt: Date | null
+    wordCount: number
+    readingTime: number
+    source: string | null
+    publishedAt: Date | null
+    createdAt: Date
     _count: ArticleCountAggregateOutputType | null
     _avg: ArticleAvgAggregateOutputType | null
     _sum: ArticleSumAggregateOutputType | null
@@ -2283,7 +2305,9 @@ export namespace Prisma {
     title?: boolean
     content?: boolean
     difficulty?: boolean
-    author?: boolean
+    wordCount?: boolean
+    readingTime?: boolean
+    source?: boolean
     publishedAt?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["article"]>
@@ -2293,7 +2317,9 @@ export namespace Prisma {
     title?: boolean
     content?: boolean
     difficulty?: boolean
-    author?: boolean
+    wordCount?: boolean
+    readingTime?: boolean
+    source?: boolean
     publishedAt?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["article"]>
@@ -2303,7 +2329,9 @@ export namespace Prisma {
     title?: boolean
     content?: boolean
     difficulty?: boolean
-    author?: boolean
+    wordCount?: boolean
+    readingTime?: boolean
+    source?: boolean
     publishedAt?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["article"]>
@@ -2313,24 +2341,28 @@ export namespace Prisma {
     title?: boolean
     content?: boolean
     difficulty?: boolean
-    author?: boolean
+    wordCount?: boolean
+    readingTime?: boolean
+    source?: boolean
     publishedAt?: boolean
     createdAt?: boolean
   }
 
-  export type ArticleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "content" | "difficulty" | "author" | "publishedAt" | "createdAt", ExtArgs["result"]["article"]>
+  export type ArticleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "content" | "difficulty" | "wordCount" | "readingTime" | "source" | "publishedAt" | "createdAt", ExtArgs["result"]["article"]>
 
   export type $ArticlePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Article"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: bigint
       title: string
       content: string
       difficulty: string
-      author: string | null
-      publishedAt: Date
-      createdAt: Date | null
+      wordCount: number
+      readingTime: number
+      source: string | null
+      publishedAt: Date | null
+      createdAt: Date
     }, ExtArgs["result"]["article"]>
     composites: {}
   }
@@ -2754,11 +2786,13 @@ export namespace Prisma {
    * Fields of the Article model
    */
   interface ArticleFieldRefs {
-    readonly id: FieldRef<"Article", 'Int'>
+    readonly id: FieldRef<"Article", 'BigInt'>
     readonly title: FieldRef<"Article", 'String'>
     readonly content: FieldRef<"Article", 'String'>
     readonly difficulty: FieldRef<"Article", 'String'>
-    readonly author: FieldRef<"Article", 'String'>
+    readonly wordCount: FieldRef<"Article", 'Int'>
+    readonly readingTime: FieldRef<"Article", 'Int'>
+    readonly source: FieldRef<"Article", 'String'>
     readonly publishedAt: FieldRef<"Article", 'DateTime'>
     readonly createdAt: FieldRef<"Article", 'DateTime'>
   }
@@ -3128,48 +3162,50 @@ export namespace Prisma {
 
 
   /**
-   * Model Words
+   * Model Word
    */
 
-  export type AggregateWords = {
-    _count: WordsCountAggregateOutputType | null
-    _avg: WordsAvgAggregateOutputType | null
-    _sum: WordsSumAggregateOutputType | null
-    _min: WordsMinAggregateOutputType | null
-    _max: WordsMaxAggregateOutputType | null
+  export type AggregateWord = {
+    _count: WordCountAggregateOutputType | null
+    _avg: WordAvgAggregateOutputType | null
+    _sum: WordSumAggregateOutputType | null
+    _min: WordMinAggregateOutputType | null
+    _max: WordMaxAggregateOutputType | null
   }
 
-  export type WordsAvgAggregateOutputType = {
+  export type WordAvgAggregateOutputType = {
     id: number | null
     frequency: number | null
   }
 
-  export type WordsSumAggregateOutputType = {
-    id: number | null
+  export type WordSumAggregateOutputType = {
+    id: bigint | null
     frequency: number | null
   }
 
-  export type WordsMinAggregateOutputType = {
-    id: number | null
+  export type WordMinAggregateOutputType = {
+    id: bigint | null
     word: string | null
     translation: string | null
     definition: string | null
     partOfSpeech: string | null
     frequency: number | null
     pronunciation: string | null
+    id_backup_text: string | null
   }
 
-  export type WordsMaxAggregateOutputType = {
-    id: number | null
+  export type WordMaxAggregateOutputType = {
+    id: bigint | null
     word: string | null
     translation: string | null
     definition: string | null
     partOfSpeech: string | null
     frequency: number | null
     pronunciation: string | null
+    id_backup_text: string | null
   }
 
-  export type WordsCountAggregateOutputType = {
+  export type WordCountAggregateOutputType = {
     id: number
     word: number
     translation: number
@@ -3178,31 +3214,22 @@ export namespace Prisma {
     frequency: number
     examples: number
     pronunciation: number
+    id_backup_text: number
     _all: number
   }
 
 
-  export type WordsAvgAggregateInputType = {
+  export type WordAvgAggregateInputType = {
     id?: true
     frequency?: true
   }
 
-  export type WordsSumAggregateInputType = {
+  export type WordSumAggregateInputType = {
     id?: true
     frequency?: true
   }
 
-  export type WordsMinAggregateInputType = {
-    id?: true
-    word?: true
-    translation?: true
-    definition?: true
-    partOfSpeech?: true
-    frequency?: true
-    pronunciation?: true
-  }
-
-  export type WordsMaxAggregateInputType = {
+  export type WordMinAggregateInputType = {
     id?: true
     word?: true
     translation?: true
@@ -3210,9 +3237,21 @@ export namespace Prisma {
     partOfSpeech?: true
     frequency?: true
     pronunciation?: true
+    id_backup_text?: true
   }
 
-  export type WordsCountAggregateInputType = {
+  export type WordMaxAggregateInputType = {
+    id?: true
+    word?: true
+    translation?: true
+    definition?: true
+    partOfSpeech?: true
+    frequency?: true
+    pronunciation?: true
+    id_backup_text?: true
+  }
+
+  export type WordCountAggregateInputType = {
     id?: true
     word?: true
     translation?: true
@@ -3221,26 +3260,27 @@ export namespace Prisma {
     frequency?: true
     examples?: true
     pronunciation?: true
+    id_backup_text?: true
     _all?: true
   }
 
-  export type WordsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Words to aggregate.
+     * Filter which Word to aggregate.
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Words to fetch.
      */
-    orderBy?: WordsOrderByWithRelationInput | WordsOrderByWithRelationInput[]
+    orderBy?: WordOrderByWithRelationInput | WordOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: WordsWhereUniqueInput
+    cursor?: WordWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3258,89 +3298,90 @@ export namespace Prisma {
      * 
      * Count returned Words
     **/
-    _count?: true | WordsCountAggregateInputType
+    _count?: true | WordCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: WordsAvgAggregateInputType
+    _avg?: WordAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: WordsSumAggregateInputType
+    _sum?: WordSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: WordsMinAggregateInputType
+    _min?: WordMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: WordsMaxAggregateInputType
+    _max?: WordMaxAggregateInputType
   }
 
-  export type GetWordsAggregateType<T extends WordsAggregateArgs> = {
-        [P in keyof T & keyof AggregateWords]: P extends '_count' | 'count'
+  export type GetWordAggregateType<T extends WordAggregateArgs> = {
+        [P in keyof T & keyof AggregateWord]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateWords[P]>
-      : GetScalarType<T[P], AggregateWords[P]>
+        : GetScalarType<T[P], AggregateWord[P]>
+      : GetScalarType<T[P], AggregateWord[P]>
   }
 
 
 
 
-  export type WordsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WordsWhereInput
-    orderBy?: WordsOrderByWithAggregationInput | WordsOrderByWithAggregationInput[]
-    by: WordsScalarFieldEnum[] | WordsScalarFieldEnum
-    having?: WordsScalarWhereWithAggregatesInput
+  export type WordGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WordWhereInput
+    orderBy?: WordOrderByWithAggregationInput | WordOrderByWithAggregationInput[]
+    by: WordScalarFieldEnum[] | WordScalarFieldEnum
+    having?: WordScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: WordsCountAggregateInputType | true
-    _avg?: WordsAvgAggregateInputType
-    _sum?: WordsSumAggregateInputType
-    _min?: WordsMinAggregateInputType
-    _max?: WordsMaxAggregateInputType
+    _count?: WordCountAggregateInputType | true
+    _avg?: WordAvgAggregateInputType
+    _sum?: WordSumAggregateInputType
+    _min?: WordMinAggregateInputType
+    _max?: WordMaxAggregateInputType
   }
 
-  export type WordsGroupByOutputType = {
-    id: number
+  export type WordGroupByOutputType = {
+    id: bigint
     word: string
     translation: string
     definition: string
     partOfSpeech: string
     frequency: number
     examples: string[]
-    pronunciation: string
-    _count: WordsCountAggregateOutputType | null
-    _avg: WordsAvgAggregateOutputType | null
-    _sum: WordsSumAggregateOutputType | null
-    _min: WordsMinAggregateOutputType | null
-    _max: WordsMaxAggregateOutputType | null
+    pronunciation: string | null
+    id_backup_text: string | null
+    _count: WordCountAggregateOutputType | null
+    _avg: WordAvgAggregateOutputType | null
+    _sum: WordSumAggregateOutputType | null
+    _min: WordMinAggregateOutputType | null
+    _max: WordMaxAggregateOutputType | null
   }
 
-  type GetWordsGroupByPayload<T extends WordsGroupByArgs> = Prisma.PrismaPromise<
+  type GetWordGroupByPayload<T extends WordGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<WordsGroupByOutputType, T['by']> &
+      PickEnumerable<WordGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof WordsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof WordGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], WordsGroupByOutputType[P]>
-            : GetScalarType<T[P], WordsGroupByOutputType[P]>
+              : GetScalarType<T[P], WordGroupByOutputType[P]>
+            : GetScalarType<T[P], WordGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type WordsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WordSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     word?: boolean
     translation?: boolean
@@ -3349,9 +3390,10 @@ export namespace Prisma {
     frequency?: boolean
     examples?: boolean
     pronunciation?: boolean
-  }, ExtArgs["result"]["words"]>
+    id_backup_text?: boolean
+  }, ExtArgs["result"]["word"]>
 
-  export type WordsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WordSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     word?: boolean
     translation?: boolean
@@ -3360,9 +3402,10 @@ export namespace Prisma {
     frequency?: boolean
     examples?: boolean
     pronunciation?: boolean
-  }, ExtArgs["result"]["words"]>
+    id_backup_text?: boolean
+  }, ExtArgs["result"]["word"]>
 
-  export type WordsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WordSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     word?: boolean
     translation?: boolean
@@ -3371,9 +3414,10 @@ export namespace Prisma {
     frequency?: boolean
     examples?: boolean
     pronunciation?: boolean
-  }, ExtArgs["result"]["words"]>
+    id_backup_text?: boolean
+  }, ExtArgs["result"]["word"]>
 
-  export type WordsSelectScalar = {
+  export type WordSelectScalar = {
     id?: boolean
     word?: boolean
     translation?: boolean
@@ -3382,152 +3426,154 @@ export namespace Prisma {
     frequency?: boolean
     examples?: boolean
     pronunciation?: boolean
+    id_backup_text?: boolean
   }
 
-  export type WordsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "word" | "translation" | "definition" | "partOfSpeech" | "frequency" | "examples" | "pronunciation", ExtArgs["result"]["words"]>
+  export type WordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "word" | "translation" | "definition" | "partOfSpeech" | "frequency" | "examples" | "pronunciation" | "id_backup_text", ExtArgs["result"]["word"]>
 
-  export type $WordsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Words"
+  export type $WordPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Word"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      id: number
+      id: bigint
       word: string
       translation: string
       definition: string
       partOfSpeech: string
       frequency: number
       examples: string[]
-      pronunciation: string
-    }, ExtArgs["result"]["words"]>
+      pronunciation: string | null
+      id_backup_text: string | null
+    }, ExtArgs["result"]["word"]>
     composites: {}
   }
 
-  type WordsGetPayload<S extends boolean | null | undefined | WordsDefaultArgs> = $Result.GetResult<Prisma.$WordsPayload, S>
+  type WordGetPayload<S extends boolean | null | undefined | WordDefaultArgs> = $Result.GetResult<Prisma.$WordPayload, S>
 
-  type WordsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<WordsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: WordsCountAggregateInputType | true
+  type WordCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WordFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WordCountAggregateInputType | true
     }
 
-  export interface WordsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Words'], meta: { name: 'Words' } }
+  export interface WordDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Word'], meta: { name: 'Word' } }
     /**
-     * Find zero or one Words that matches the filter.
-     * @param {WordsFindUniqueArgs} args - Arguments to find a Words
+     * Find zero or one Word that matches the filter.
+     * @param {WordFindUniqueArgs} args - Arguments to find a Word
      * @example
-     * // Get one Words
-     * const words = await prisma.words.findUnique({
+     * // Get one Word
+     * const word = await prisma.word.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends WordsFindUniqueArgs>(args: SelectSubset<T, WordsFindUniqueArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends WordFindUniqueArgs>(args: SelectSubset<T, WordFindUniqueArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Words that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Word that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {WordsFindUniqueOrThrowArgs} args - Arguments to find a Words
+     * @param {WordFindUniqueOrThrowArgs} args - Arguments to find a Word
      * @example
-     * // Get one Words
-     * const words = await prisma.words.findUniqueOrThrow({
+     * // Get one Word
+     * const word = await prisma.word.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends WordsFindUniqueOrThrowArgs>(args: SelectSubset<T, WordsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends WordFindUniqueOrThrowArgs>(args: SelectSubset<T, WordFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Words that matches the filter.
+     * Find the first Word that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsFindFirstArgs} args - Arguments to find a Words
+     * @param {WordFindFirstArgs} args - Arguments to find a Word
      * @example
-     * // Get one Words
-     * const words = await prisma.words.findFirst({
+     * // Get one Word
+     * const word = await prisma.word.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends WordsFindFirstArgs>(args?: SelectSubset<T, WordsFindFirstArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends WordFindFirstArgs>(args?: SelectSubset<T, WordFindFirstArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Words that matches the filter or
+     * Find the first Word that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsFindFirstOrThrowArgs} args - Arguments to find a Words
+     * @param {WordFindFirstOrThrowArgs} args - Arguments to find a Word
      * @example
-     * // Get one Words
-     * const words = await prisma.words.findFirstOrThrow({
+     * // Get one Word
+     * const word = await prisma.word.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends WordsFindFirstOrThrowArgs>(args?: SelectSubset<T, WordsFindFirstOrThrowArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends WordFindFirstOrThrowArgs>(args?: SelectSubset<T, WordFindFirstOrThrowArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Words that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {WordFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Words
-     * const words = await prisma.words.findMany()
+     * const words = await prisma.word.findMany()
      * 
      * // Get first 10 Words
-     * const words = await prisma.words.findMany({ take: 10 })
+     * const words = await prisma.word.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const wordsWithIdOnly = await prisma.words.findMany({ select: { id: true } })
+     * const wordWithIdOnly = await prisma.word.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends WordsFindManyArgs>(args?: SelectSubset<T, WordsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends WordFindManyArgs>(args?: SelectSubset<T, WordFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Words.
-     * @param {WordsCreateArgs} args - Arguments to create a Words.
+     * Create a Word.
+     * @param {WordCreateArgs} args - Arguments to create a Word.
      * @example
-     * // Create one Words
-     * const Words = await prisma.words.create({
+     * // Create one Word
+     * const Word = await prisma.word.create({
      *   data: {
-     *     // ... data to create a Words
+     *     // ... data to create a Word
      *   }
      * })
      * 
      */
-    create<T extends WordsCreateArgs>(args: SelectSubset<T, WordsCreateArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends WordCreateArgs>(args: SelectSubset<T, WordCreateArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Words.
-     * @param {WordsCreateManyArgs} args - Arguments to create many Words.
+     * @param {WordCreateManyArgs} args - Arguments to create many Words.
      * @example
      * // Create many Words
-     * const words = await prisma.words.createMany({
+     * const word = await prisma.word.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends WordsCreateManyArgs>(args?: SelectSubset<T, WordsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends WordCreateManyArgs>(args?: SelectSubset<T, WordCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Words and returns the data saved in the database.
-     * @param {WordsCreateManyAndReturnArgs} args - Arguments to create many Words.
+     * @param {WordCreateManyAndReturnArgs} args - Arguments to create many Words.
      * @example
      * // Create many Words
-     * const words = await prisma.words.createManyAndReturn({
+     * const word = await prisma.word.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Words and only return the `id`
-     * const wordsWithIdOnly = await prisma.words.createManyAndReturn({
+     * const wordWithIdOnly = await prisma.word.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -3537,28 +3583,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends WordsCreateManyAndReturnArgs>(args?: SelectSubset<T, WordsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends WordCreateManyAndReturnArgs>(args?: SelectSubset<T, WordCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Words.
-     * @param {WordsDeleteArgs} args - Arguments to delete one Words.
+     * Delete a Word.
+     * @param {WordDeleteArgs} args - Arguments to delete one Word.
      * @example
-     * // Delete one Words
-     * const Words = await prisma.words.delete({
+     * // Delete one Word
+     * const Word = await prisma.word.delete({
      *   where: {
-     *     // ... filter to delete one Words
+     *     // ... filter to delete one Word
      *   }
      * })
      * 
      */
-    delete<T extends WordsDeleteArgs>(args: SelectSubset<T, WordsDeleteArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends WordDeleteArgs>(args: SelectSubset<T, WordDeleteArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Words.
-     * @param {WordsUpdateArgs} args - Arguments to update one Words.
+     * Update one Word.
+     * @param {WordUpdateArgs} args - Arguments to update one Word.
      * @example
-     * // Update one Words
-     * const words = await prisma.words.update({
+     * // Update one Word
+     * const word = await prisma.word.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3568,30 +3614,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends WordsUpdateArgs>(args: SelectSubset<T, WordsUpdateArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends WordUpdateArgs>(args: SelectSubset<T, WordUpdateArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Words.
-     * @param {WordsDeleteManyArgs} args - Arguments to filter Words to delete.
+     * @param {WordDeleteManyArgs} args - Arguments to filter Words to delete.
      * @example
      * // Delete a few Words
-     * const { count } = await prisma.words.deleteMany({
+     * const { count } = await prisma.word.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends WordsDeleteManyArgs>(args?: SelectSubset<T, WordsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends WordDeleteManyArgs>(args?: SelectSubset<T, WordDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Words.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {WordUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Words
-     * const words = await prisma.words.updateMany({
+     * const word = await prisma.word.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3601,14 +3647,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends WordsUpdateManyArgs>(args: SelectSubset<T, WordsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends WordUpdateManyArgs>(args: SelectSubset<T, WordUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Words and returns the data updated in the database.
-     * @param {WordsUpdateManyAndReturnArgs} args - Arguments to update many Words.
+     * @param {WordUpdateManyAndReturnArgs} args - Arguments to update many Words.
      * @example
      * // Update many Words
-     * const words = await prisma.words.updateManyAndReturn({
+     * const word = await prisma.word.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3618,7 +3664,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Words and only return the `id`
-     * const wordsWithIdOnly = await prisma.words.updateManyAndReturn({
+     * const wordWithIdOnly = await prisma.word.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -3631,56 +3677,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends WordsUpdateManyAndReturnArgs>(args: SelectSubset<T, WordsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends WordUpdateManyAndReturnArgs>(args: SelectSubset<T, WordUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Words.
-     * @param {WordsUpsertArgs} args - Arguments to update or create a Words.
+     * Create or update one Word.
+     * @param {WordUpsertArgs} args - Arguments to update or create a Word.
      * @example
-     * // Update or create a Words
-     * const words = await prisma.words.upsert({
+     * // Update or create a Word
+     * const word = await prisma.word.upsert({
      *   create: {
-     *     // ... data to create a Words
+     *     // ... data to create a Word
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Words we want to update
+     *     // ... the filter for the Word we want to update
      *   }
      * })
      */
-    upsert<T extends WordsUpsertArgs>(args: SelectSubset<T, WordsUpsertArgs<ExtArgs>>): Prisma__WordsClient<$Result.GetResult<Prisma.$WordsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends WordUpsertArgs>(args: SelectSubset<T, WordUpsertArgs<ExtArgs>>): Prisma__WordClient<$Result.GetResult<Prisma.$WordPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Words.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsCountArgs} args - Arguments to filter Words to count.
+     * @param {WordCountArgs} args - Arguments to filter Words to count.
      * @example
      * // Count the number of Words
-     * const count = await prisma.words.count({
+     * const count = await prisma.word.count({
      *   where: {
      *     // ... the filter for the Words we want to count
      *   }
      * })
     **/
-    count<T extends WordsCountArgs>(
-      args?: Subset<T, WordsCountArgs>,
+    count<T extends WordCountArgs>(
+      args?: Subset<T, WordCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], WordsCountAggregateOutputType>
+          : GetScalarType<T['select'], WordCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Words.
+     * Allows you to perform aggregations operations on a Word.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {WordAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3700,13 +3746,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends WordsAggregateArgs>(args: Subset<T, WordsAggregateArgs>): Prisma.PrismaPromise<GetWordsAggregateType<T>>
+    aggregate<T extends WordAggregateArgs>(args: Subset<T, WordAggregateArgs>): Prisma.PrismaPromise<GetWordAggregateType<T>>
 
     /**
-     * Group by Words.
+     * Group by Word.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WordsGroupByArgs} args - Group by arguments.
+     * @param {WordGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3721,14 +3767,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends WordsGroupByArgs,
+      T extends WordGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: WordsGroupByArgs['orderBy'] }
-        : { orderBy?: WordsGroupByArgs['orderBy'] },
+        ? { orderBy: WordGroupByArgs['orderBy'] }
+        : { orderBy?: WordGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3777,20 +3823,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, WordsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWordsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, WordGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWordGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Words model
+   * Fields of the Word model
    */
-  readonly fields: WordsFieldRefs;
+  readonly fields: WordFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Words.
+   * The delegate class that acts as a "Promise-like" for Word.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__WordsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__WordClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -3818,85 +3864,86 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Words model
+   * Fields of the Word model
    */
-  interface WordsFieldRefs {
-    readonly id: FieldRef<"Words", 'Int'>
-    readonly word: FieldRef<"Words", 'String'>
-    readonly translation: FieldRef<"Words", 'String'>
-    readonly definition: FieldRef<"Words", 'String'>
-    readonly partOfSpeech: FieldRef<"Words", 'String'>
-    readonly frequency: FieldRef<"Words", 'Int'>
-    readonly examples: FieldRef<"Words", 'String[]'>
-    readonly pronunciation: FieldRef<"Words", 'String'>
+  interface WordFieldRefs {
+    readonly id: FieldRef<"Word", 'BigInt'>
+    readonly word: FieldRef<"Word", 'String'>
+    readonly translation: FieldRef<"Word", 'String'>
+    readonly definition: FieldRef<"Word", 'String'>
+    readonly partOfSpeech: FieldRef<"Word", 'String'>
+    readonly frequency: FieldRef<"Word", 'Int'>
+    readonly examples: FieldRef<"Word", 'String[]'>
+    readonly pronunciation: FieldRef<"Word", 'String'>
+    readonly id_backup_text: FieldRef<"Word", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * Words findUnique
+   * Word findUnique
    */
-  export type WordsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * Filter, which Words to fetch.
+     * Filter, which Word to fetch.
      */
-    where: WordsWhereUniqueInput
+    where: WordWhereUniqueInput
   }
 
   /**
-   * Words findUniqueOrThrow
+   * Word findUniqueOrThrow
    */
-  export type WordsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * Filter, which Words to fetch.
+     * Filter, which Word to fetch.
      */
-    where: WordsWhereUniqueInput
+    where: WordWhereUniqueInput
   }
 
   /**
-   * Words findFirst
+   * Word findFirst
    */
-  export type WordsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * Filter, which Words to fetch.
+     * Filter, which Word to fetch.
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Words to fetch.
      */
-    orderBy?: WordsOrderByWithRelationInput | WordsOrderByWithRelationInput[]
+    orderBy?: WordOrderByWithRelationInput | WordOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Words.
      */
-    cursor?: WordsWhereUniqueInput
+    cursor?: WordWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3914,37 +3961,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Words.
      */
-    distinct?: WordsScalarFieldEnum | WordsScalarFieldEnum[]
+    distinct?: WordScalarFieldEnum | WordScalarFieldEnum[]
   }
 
   /**
-   * Words findFirstOrThrow
+   * Word findFirstOrThrow
    */
-  export type WordsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * Filter, which Words to fetch.
+     * Filter, which Word to fetch.
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Words to fetch.
      */
-    orderBy?: WordsOrderByWithRelationInput | WordsOrderByWithRelationInput[]
+    orderBy?: WordOrderByWithRelationInput | WordOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Words.
      */
-    cursor?: WordsWhereUniqueInput
+    cursor?: WordWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -3962,37 +4009,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Words.
      */
-    distinct?: WordsScalarFieldEnum | WordsScalarFieldEnum[]
+    distinct?: WordScalarFieldEnum | WordScalarFieldEnum[]
   }
 
   /**
-   * Words findMany
+   * Word findMany
    */
-  export type WordsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
      * Filter, which Words to fetch.
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Words to fetch.
      */
-    orderBy?: WordsOrderByWithRelationInput | WordsOrderByWithRelationInput[]
+    orderBy?: WordOrderByWithRelationInput | WordOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Words.
      */
-    cursor?: WordsWhereUniqueInput
+    cursor?: WordWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -4005,91 +4052,91 @@ export namespace Prisma {
      * Skip the first `n` Words.
      */
     skip?: number
-    distinct?: WordsScalarFieldEnum | WordsScalarFieldEnum[]
+    distinct?: WordScalarFieldEnum | WordScalarFieldEnum[]
   }
 
   /**
-   * Words create
+   * Word create
    */
-  export type WordsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * The data needed to create a Words.
+     * The data needed to create a Word.
      */
-    data: XOR<WordsCreateInput, WordsUncheckedCreateInput>
+    data: XOR<WordCreateInput, WordUncheckedCreateInput>
   }
 
   /**
-   * Words createMany
+   * Word createMany
    */
-  export type WordsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Words.
      */
-    data: WordsCreateManyInput | WordsCreateManyInput[]
+    data: WordCreateManyInput | WordCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Words createManyAndReturn
+   * Word createManyAndReturn
    */
-  export type WordsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelectCreateManyAndReturn<ExtArgs> | null
+    select?: WordSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
      * The data used to create many Words.
      */
-    data: WordsCreateManyInput | WordsCreateManyInput[]
+    data: WordCreateManyInput | WordCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Words update
+   * Word update
    */
-  export type WordsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * The data needed to update a Words.
+     * The data needed to update a Word.
      */
-    data: XOR<WordsUpdateInput, WordsUncheckedUpdateInput>
+    data: XOR<WordUpdateInput, WordUncheckedUpdateInput>
     /**
-     * Choose, which Words to update.
+     * Choose, which Word to update.
      */
-    where: WordsWhereUniqueInput
+    where: WordWhereUniqueInput
   }
 
   /**
-   * Words updateMany
+   * Word updateMany
    */
-  export type WordsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Words.
      */
-    data: XOR<WordsUpdateManyMutationInput, WordsUncheckedUpdateManyInput>
+    data: XOR<WordUpdateManyMutationInput, WordUncheckedUpdateManyInput>
     /**
      * Filter which Words to update
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * Limit how many Words to update.
      */
@@ -4097,25 +4144,25 @@ export namespace Prisma {
   }
 
   /**
-   * Words updateManyAndReturn
+   * Word updateManyAndReturn
    */
-  export type WordsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: WordSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
      * The data used to update Words.
      */
-    data: XOR<WordsUpdateManyMutationInput, WordsUncheckedUpdateManyInput>
+    data: XOR<WordUpdateManyMutationInput, WordUncheckedUpdateManyInput>
     /**
      * Filter which Words to update
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * Limit how many Words to update.
      */
@@ -4123,57 +4170,57 @@ export namespace Prisma {
   }
 
   /**
-   * Words upsert
+   * Word upsert
    */
-  export type WordsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * The filter to search for the Words to update in case it exists.
+     * The filter to search for the Word to update in case it exists.
      */
-    where: WordsWhereUniqueInput
+    where: WordWhereUniqueInput
     /**
-     * In case the Words found by the `where` argument doesn't exist, create a new Words with this data.
+     * In case the Word found by the `where` argument doesn't exist, create a new Word with this data.
      */
-    create: XOR<WordsCreateInput, WordsUncheckedCreateInput>
+    create: XOR<WordCreateInput, WordUncheckedCreateInput>
     /**
-     * In case the Words was found with the provided `where` argument, update it with this data.
+     * In case the Word was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<WordsUpdateInput, WordsUncheckedUpdateInput>
+    update: XOR<WordUpdateInput, WordUncheckedUpdateInput>
   }
 
   /**
-   * Words delete
+   * Word delete
    */
-  export type WordsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
     /**
-     * Filter which Words to delete.
+     * Filter which Word to delete.
      */
-    where: WordsWhereUniqueInput
+    where: WordWhereUniqueInput
   }
 
   /**
-   * Words deleteMany
+   * Word deleteMany
    */
-  export type WordsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Words to delete
      */
-    where?: WordsWhereInput
+    where?: WordWhereInput
     /**
      * Limit how many Words to delete.
      */
@@ -4181,17 +4228,17 @@ export namespace Prisma {
   }
 
   /**
-   * Words without action
+   * Word without action
    */
-  export type WordsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WordDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Words
+     * Select specific fields to fetch from the Word
      */
-    select?: WordsSelect<ExtArgs> | null
+    select?: WordSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Words
+     * Omit specific fields from the Word
      */
-    omit?: WordsOmit<ExtArgs> | null
+    omit?: WordOmit<ExtArgs> | null
   }
 
 
@@ -4211,9 +4258,9 @@ export namespace Prisma {
 
   export const UserScalarFieldEnum: {
     id: 'id',
-    firstName: 'firstName',
-    lastName: 'lastName',
+    name: 'name',
     email: 'email',
+    emailVerified: 'emailVerified',
     role: 'role'
   };
 
@@ -4225,7 +4272,9 @@ export namespace Prisma {
     title: 'title',
     content: 'content',
     difficulty: 'difficulty',
-    author: 'author',
+    wordCount: 'wordCount',
+    readingTime: 'readingTime',
+    source: 'source',
     publishedAt: 'publishedAt',
     createdAt: 'createdAt'
   };
@@ -4233,7 +4282,7 @@ export namespace Prisma {
   export type ArticleScalarFieldEnum = (typeof ArticleScalarFieldEnum)[keyof typeof ArticleScalarFieldEnum]
 
 
-  export const WordsScalarFieldEnum: {
+  export const WordScalarFieldEnum: {
     id: 'id',
     word: 'word',
     translation: 'translation',
@@ -4241,10 +4290,11 @@ export namespace Prisma {
     partOfSpeech: 'partOfSpeech',
     frequency: 'frequency',
     examples: 'examples',
-    pronunciation: 'pronunciation'
+    pronunciation: 'pronunciation',
+    id_backup_text: 'id_backup_text'
   };
 
-  export type WordsScalarFieldEnum = (typeof WordsScalarFieldEnum)[keyof typeof WordsScalarFieldEnum]
+  export type WordScalarFieldEnum = (typeof WordScalarFieldEnum)[keyof typeof WordScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4277,16 +4327,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
+   * Reference to a field of type 'BigInt'
    */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
     
 
 
   /**
-   * Reference to a field of type 'Int[]'
+   * Reference to a field of type 'BigInt[]'
    */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
     
 
 
@@ -4319,6 +4369,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4339,37 +4403,37 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    id?: IntFilter<"User"> | number
-    firstName?: StringFilter<"User"> | string
-    lastName?: StringFilter<"User"> | string
+    id?: BigIntFilter<"User"> | bigint | number
+    name?: StringNullableFilter<"User"> | string | null
     email?: StringFilter<"User"> | string
+    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
     role?: StringFilter<"User"> | string
   }
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
+    name?: SortOrderInput | SortOrder
     email?: SortOrder
+    emailVerified?: SortOrderInput | SortOrder
     role?: SortOrder
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: bigint | number
     email?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
-    firstName?: StringFilter<"User"> | string
-    lastName?: StringFilter<"User"> | string
+    name?: StringNullableFilter<"User"> | string | null
+    emailVerified?: DateTimeNullableFilter<"User"> | Date | string | null
     role?: StringFilter<"User"> | string
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
+    name?: SortOrderInput | SortOrder
     email?: SortOrder
+    emailVerified?: SortOrderInput | SortOrder
     role?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
@@ -4382,10 +4446,10 @@ export namespace Prisma {
     AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     OR?: UserScalarWhereWithAggregatesInput[]
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"User"> | number
-    firstName?: StringWithAggregatesFilter<"User"> | string
-    lastName?: StringWithAggregatesFilter<"User"> | string
+    id?: BigIntWithAggregatesFilter<"User"> | bigint | number
+    name?: StringNullableWithAggregatesFilter<"User"> | string | null
     email?: StringWithAggregatesFilter<"User"> | string
+    emailVerified?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     role?: StringWithAggregatesFilter<"User"> | string
   }
 
@@ -4393,13 +4457,15 @@ export namespace Prisma {
     AND?: ArticleWhereInput | ArticleWhereInput[]
     OR?: ArticleWhereInput[]
     NOT?: ArticleWhereInput | ArticleWhereInput[]
-    id?: IntFilter<"Article"> | number
+    id?: BigIntFilter<"Article"> | bigint | number
     title?: StringFilter<"Article"> | string
     content?: StringFilter<"Article"> | string
     difficulty?: StringFilter<"Article"> | string
-    author?: StringNullableFilter<"Article"> | string | null
-    publishedAt?: DateTimeFilter<"Article"> | Date | string
-    createdAt?: DateTimeNullableFilter<"Article"> | Date | string | null
+    wordCount?: IntFilter<"Article"> | number
+    readingTime?: IntFilter<"Article"> | number
+    source?: StringNullableFilter<"Article"> | string | null
+    publishedAt?: DateTimeNullableFilter<"Article"> | Date | string | null
+    createdAt?: DateTimeFilter<"Article"> | Date | string
   }
 
   export type ArticleOrderByWithRelationInput = {
@@ -4407,32 +4473,38 @@ export namespace Prisma {
     title?: SortOrder
     content?: SortOrder
     difficulty?: SortOrder
-    author?: SortOrderInput | SortOrder
-    publishedAt?: SortOrder
-    createdAt?: SortOrderInput | SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+    source?: SortOrderInput | SortOrder
+    publishedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
   }
 
   export type ArticleWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+    id?: bigint | number
+    title?: string
     AND?: ArticleWhereInput | ArticleWhereInput[]
     OR?: ArticleWhereInput[]
     NOT?: ArticleWhereInput | ArticleWhereInput[]
-    title?: StringFilter<"Article"> | string
     content?: StringFilter<"Article"> | string
     difficulty?: StringFilter<"Article"> | string
-    author?: StringNullableFilter<"Article"> | string | null
-    publishedAt?: DateTimeFilter<"Article"> | Date | string
-    createdAt?: DateTimeNullableFilter<"Article"> | Date | string | null
-  }, "id">
+    wordCount?: IntFilter<"Article"> | number
+    readingTime?: IntFilter<"Article"> | number
+    source?: StringNullableFilter<"Article"> | string | null
+    publishedAt?: DateTimeNullableFilter<"Article"> | Date | string | null
+    createdAt?: DateTimeFilter<"Article"> | Date | string
+  }, "id" | "title">
 
   export type ArticleOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
     content?: SortOrder
     difficulty?: SortOrder
-    author?: SortOrderInput | SortOrder
-    publishedAt?: SortOrder
-    createdAt?: SortOrderInput | SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+    source?: SortOrderInput | SortOrder
+    publishedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
     _count?: ArticleCountOrderByAggregateInput
     _avg?: ArticleAvgOrderByAggregateInput
     _max?: ArticleMaxOrderByAggregateInput
@@ -4444,30 +4516,33 @@ export namespace Prisma {
     AND?: ArticleScalarWhereWithAggregatesInput | ArticleScalarWhereWithAggregatesInput[]
     OR?: ArticleScalarWhereWithAggregatesInput[]
     NOT?: ArticleScalarWhereWithAggregatesInput | ArticleScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Article"> | number
+    id?: BigIntWithAggregatesFilter<"Article"> | bigint | number
     title?: StringWithAggregatesFilter<"Article"> | string
     content?: StringWithAggregatesFilter<"Article"> | string
     difficulty?: StringWithAggregatesFilter<"Article"> | string
-    author?: StringNullableWithAggregatesFilter<"Article"> | string | null
-    publishedAt?: DateTimeWithAggregatesFilter<"Article"> | Date | string
-    createdAt?: DateTimeNullableWithAggregatesFilter<"Article"> | Date | string | null
+    wordCount?: IntWithAggregatesFilter<"Article"> | number
+    readingTime?: IntWithAggregatesFilter<"Article"> | number
+    source?: StringNullableWithAggregatesFilter<"Article"> | string | null
+    publishedAt?: DateTimeNullableWithAggregatesFilter<"Article"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Article"> | Date | string
   }
 
-  export type WordsWhereInput = {
-    AND?: WordsWhereInput | WordsWhereInput[]
-    OR?: WordsWhereInput[]
-    NOT?: WordsWhereInput | WordsWhereInput[]
-    id?: IntFilter<"Words"> | number
-    word?: StringFilter<"Words"> | string
-    translation?: StringFilter<"Words"> | string
-    definition?: StringFilter<"Words"> | string
-    partOfSpeech?: StringFilter<"Words"> | string
-    frequency?: IntFilter<"Words"> | number
-    examples?: StringNullableListFilter<"Words">
-    pronunciation?: StringFilter<"Words"> | string
+  export type WordWhereInput = {
+    AND?: WordWhereInput | WordWhereInput[]
+    OR?: WordWhereInput[]
+    NOT?: WordWhereInput | WordWhereInput[]
+    id?: BigIntFilter<"Word"> | bigint | number
+    word?: StringFilter<"Word"> | string
+    translation?: StringFilter<"Word"> | string
+    definition?: StringFilter<"Word"> | string
+    partOfSpeech?: StringFilter<"Word"> | string
+    frequency?: IntFilter<"Word"> | number
+    examples?: StringNullableListFilter<"Word">
+    pronunciation?: StringNullableFilter<"Word"> | string | null
+    id_backup_text?: StringNullableFilter<"Word"> | string | null
   }
 
-  export type WordsOrderByWithRelationInput = {
+  export type WordOrderByWithRelationInput = {
     id?: SortOrder
     word?: SortOrder
     translation?: SortOrder
@@ -4475,24 +4550,26 @@ export namespace Prisma {
     partOfSpeech?: SortOrder
     frequency?: SortOrder
     examples?: SortOrder
-    pronunciation?: SortOrder
+    pronunciation?: SortOrderInput | SortOrder
+    id_backup_text?: SortOrderInput | SortOrder
   }
 
-  export type WordsWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
+  export type WordWhereUniqueInput = Prisma.AtLeast<{
+    id?: bigint | number
     word?: string
-    AND?: WordsWhereInput | WordsWhereInput[]
-    OR?: WordsWhereInput[]
-    NOT?: WordsWhereInput | WordsWhereInput[]
-    translation?: StringFilter<"Words"> | string
-    definition?: StringFilter<"Words"> | string
-    partOfSpeech?: StringFilter<"Words"> | string
-    frequency?: IntFilter<"Words"> | number
-    examples?: StringNullableListFilter<"Words">
-    pronunciation?: StringFilter<"Words"> | string
+    AND?: WordWhereInput | WordWhereInput[]
+    OR?: WordWhereInput[]
+    NOT?: WordWhereInput | WordWhereInput[]
+    translation?: StringFilter<"Word"> | string
+    definition?: StringFilter<"Word"> | string
+    partOfSpeech?: StringFilter<"Word"> | string
+    frequency?: IntFilter<"Word"> | number
+    examples?: StringNullableListFilter<"Word">
+    pronunciation?: StringNullableFilter<"Word"> | string | null
+    id_backup_text?: StringNullableFilter<"Word"> | string | null
   }, "id" | "word">
 
-  export type WordsOrderByWithAggregationInput = {
+  export type WordOrderByWithAggregationInput = {
     id?: SortOrder
     word?: SortOrder
     translation?: SortOrder
@@ -4500,312 +4577,263 @@ export namespace Prisma {
     partOfSpeech?: SortOrder
     frequency?: SortOrder
     examples?: SortOrder
-    pronunciation?: SortOrder
-    _count?: WordsCountOrderByAggregateInput
-    _avg?: WordsAvgOrderByAggregateInput
-    _max?: WordsMaxOrderByAggregateInput
-    _min?: WordsMinOrderByAggregateInput
-    _sum?: WordsSumOrderByAggregateInput
+    pronunciation?: SortOrderInput | SortOrder
+    id_backup_text?: SortOrderInput | SortOrder
+    _count?: WordCountOrderByAggregateInput
+    _avg?: WordAvgOrderByAggregateInput
+    _max?: WordMaxOrderByAggregateInput
+    _min?: WordMinOrderByAggregateInput
+    _sum?: WordSumOrderByAggregateInput
   }
 
-  export type WordsScalarWhereWithAggregatesInput = {
-    AND?: WordsScalarWhereWithAggregatesInput | WordsScalarWhereWithAggregatesInput[]
-    OR?: WordsScalarWhereWithAggregatesInput[]
-    NOT?: WordsScalarWhereWithAggregatesInput | WordsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Words"> | number
-    word?: StringWithAggregatesFilter<"Words"> | string
-    translation?: StringWithAggregatesFilter<"Words"> | string
-    definition?: StringWithAggregatesFilter<"Words"> | string
-    partOfSpeech?: StringWithAggregatesFilter<"Words"> | string
-    frequency?: IntWithAggregatesFilter<"Words"> | number
-    examples?: StringNullableListFilter<"Words">
-    pronunciation?: StringWithAggregatesFilter<"Words"> | string
+  export type WordScalarWhereWithAggregatesInput = {
+    AND?: WordScalarWhereWithAggregatesInput | WordScalarWhereWithAggregatesInput[]
+    OR?: WordScalarWhereWithAggregatesInput[]
+    NOT?: WordScalarWhereWithAggregatesInput | WordScalarWhereWithAggregatesInput[]
+    id?: BigIntWithAggregatesFilter<"Word"> | bigint | number
+    word?: StringWithAggregatesFilter<"Word"> | string
+    translation?: StringWithAggregatesFilter<"Word"> | string
+    definition?: StringWithAggregatesFilter<"Word"> | string
+    partOfSpeech?: StringWithAggregatesFilter<"Word"> | string
+    frequency?: IntWithAggregatesFilter<"Word"> | number
+    examples?: StringNullableListFilter<"Word">
+    pronunciation?: StringNullableWithAggregatesFilter<"Word"> | string | null
+    id_backup_text?: StringNullableWithAggregatesFilter<"Word"> | string | null
   }
 
   export type UserCreateInput = {
-    firstName: string
-    lastName: string
+    id?: bigint | number
+    name?: string | null
     email: string
+    emailVerified?: Date | string | null
     role?: string
   }
 
   export type UserUncheckedCreateInput = {
-    id?: number
-    firstName: string
-    lastName: string
+    id?: bigint | number
+    name?: string | null
     email: string
+    emailVerified?: Date | string | null
     role?: string
   }
 
   export type UserUpdateInput = {
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserCreateManyInput = {
-    id?: number
-    firstName: string
-    lastName: string
+    id?: bigint | number
+    name?: string | null
     email: string
+    emailVerified?: Date | string | null
     role?: string
   }
 
   export type UserUpdateManyMutationInput = {
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: StringFieldUpdateOperationsInput | string
   }
 
   export type UserUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     role?: StringFieldUpdateOperationsInput | string
   }
 
   export type ArticleCreateInput = {
+    id?: bigint | number
     title: string
     content: string
     difficulty: string
-    author?: string | null
-    publishedAt?: Date | string
-    createdAt?: Date | string | null
+    wordCount: number
+    readingTime: number
+    source?: string | null
+    publishedAt?: Date | string | null
+    createdAt?: Date | string
   }
 
   export type ArticleUncheckedCreateInput = {
-    id?: number
+    id?: bigint | number
     title: string
     content: string
     difficulty: string
-    author?: string | null
-    publishedAt?: Date | string
-    createdAt?: Date | string | null
+    wordCount: number
+    readingTime: number
+    source?: string | null
+    publishedAt?: Date | string | null
+    createdAt?: Date | string
   }
 
   export type ArticleUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     difficulty?: StringFieldUpdateOperationsInput | string
-    author?: NullableStringFieldUpdateOperationsInput | string | null
-    publishedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    wordCount?: IntFieldUpdateOperationsInput | number
+    readingTime?: IntFieldUpdateOperationsInput | number
+    source?: NullableStringFieldUpdateOperationsInput | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArticleUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     difficulty?: StringFieldUpdateOperationsInput | string
-    author?: NullableStringFieldUpdateOperationsInput | string | null
-    publishedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    wordCount?: IntFieldUpdateOperationsInput | number
+    readingTime?: IntFieldUpdateOperationsInput | number
+    source?: NullableStringFieldUpdateOperationsInput | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArticleCreateManyInput = {
-    id?: number
+    id?: bigint | number
     title: string
     content: string
     difficulty: string
-    author?: string | null
-    publishedAt?: Date | string
-    createdAt?: Date | string | null
+    wordCount: number
+    readingTime: number
+    source?: string | null
+    publishedAt?: Date | string | null
+    createdAt?: Date | string
   }
 
   export type ArticleUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     difficulty?: StringFieldUpdateOperationsInput | string
-    author?: NullableStringFieldUpdateOperationsInput | string | null
-    publishedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    wordCount?: IntFieldUpdateOperationsInput | number
+    readingTime?: IntFieldUpdateOperationsInput | number
+    source?: NullableStringFieldUpdateOperationsInput | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ArticleUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     title?: StringFieldUpdateOperationsInput | string
     content?: StringFieldUpdateOperationsInput | string
     difficulty?: StringFieldUpdateOperationsInput | string
-    author?: NullableStringFieldUpdateOperationsInput | string | null
-    publishedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    wordCount?: IntFieldUpdateOperationsInput | number
+    readingTime?: IntFieldUpdateOperationsInput | number
+    source?: NullableStringFieldUpdateOperationsInput | string | null
+    publishedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type WordsCreateInput = {
+  export type WordCreateInput = {
+    id?: bigint | number
     word: string
     translation: string
     definition: string
     partOfSpeech: string
     frequency: number
-    examples?: WordsCreateexamplesInput | string[]
-    pronunciation: string
+    examples?: WordCreateexamplesInput | string[]
+    pronunciation?: string | null
+    id_backup_text?: string | null
   }
 
-  export type WordsUncheckedCreateInput = {
-    id?: number
+  export type WordUncheckedCreateInput = {
+    id?: bigint | number
     word: string
     translation: string
     definition: string
     partOfSpeech: string
     frequency: number
-    examples?: WordsCreateexamplesInput | string[]
-    pronunciation: string
+    examples?: WordCreateexamplesInput | string[]
+    pronunciation?: string | null
+    id_backup_text?: string | null
   }
 
-  export type WordsUpdateInput = {
+  export type WordUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     word?: StringFieldUpdateOperationsInput | string
     translation?: StringFieldUpdateOperationsInput | string
     definition?: StringFieldUpdateOperationsInput | string
     partOfSpeech?: StringFieldUpdateOperationsInput | string
     frequency?: IntFieldUpdateOperationsInput | number
-    examples?: WordsUpdateexamplesInput | string[]
-    pronunciation?: StringFieldUpdateOperationsInput | string
+    examples?: WordUpdateexamplesInput | string[]
+    pronunciation?: NullableStringFieldUpdateOperationsInput | string | null
+    id_backup_text?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type WordsUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
+  export type WordUncheckedUpdateInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     word?: StringFieldUpdateOperationsInput | string
     translation?: StringFieldUpdateOperationsInput | string
     definition?: StringFieldUpdateOperationsInput | string
     partOfSpeech?: StringFieldUpdateOperationsInput | string
     frequency?: IntFieldUpdateOperationsInput | number
-    examples?: WordsUpdateexamplesInput | string[]
-    pronunciation?: StringFieldUpdateOperationsInput | string
+    examples?: WordUpdateexamplesInput | string[]
+    pronunciation?: NullableStringFieldUpdateOperationsInput | string | null
+    id_backup_text?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type WordsCreateManyInput = {
-    id?: number
+  export type WordCreateManyInput = {
+    id?: bigint | number
     word: string
     translation: string
     definition: string
     partOfSpeech: string
     frequency: number
-    examples?: WordsCreateexamplesInput | string[]
-    pronunciation: string
+    examples?: WordCreateexamplesInput | string[]
+    pronunciation?: string | null
+    id_backup_text?: string | null
   }
 
-  export type WordsUpdateManyMutationInput = {
+  export type WordUpdateManyMutationInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     word?: StringFieldUpdateOperationsInput | string
     translation?: StringFieldUpdateOperationsInput | string
     definition?: StringFieldUpdateOperationsInput | string
     partOfSpeech?: StringFieldUpdateOperationsInput | string
     frequency?: IntFieldUpdateOperationsInput | number
-    examples?: WordsUpdateexamplesInput | string[]
-    pronunciation?: StringFieldUpdateOperationsInput | string
+    examples?: WordUpdateexamplesInput | string[]
+    pronunciation?: NullableStringFieldUpdateOperationsInput | string | null
+    id_backup_text?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type WordsUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
+  export type WordUncheckedUpdateManyInput = {
+    id?: BigIntFieldUpdateOperationsInput | bigint | number
     word?: StringFieldUpdateOperationsInput | string
     translation?: StringFieldUpdateOperationsInput | string
     definition?: StringFieldUpdateOperationsInput | string
     partOfSpeech?: StringFieldUpdateOperationsInput | string
     frequency?: IntFieldUpdateOperationsInput | number
-    examples?: WordsUpdateexamplesInput | string[]
-    pronunciation?: StringFieldUpdateOperationsInput | string
+    examples?: WordUpdateexamplesInput | string[]
+    pronunciation?: NullableStringFieldUpdateOperationsInput | string | null
+    id_backup_text?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type StringFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type UserCountOrderByAggregateInput = {
-    id?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-  }
-
-  export type UserAvgOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type UserMaxOrderByAggregateInput = {
-    id?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-  }
-
-  export type UserMinOrderByAggregateInput = {
-    id?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
-    email?: SortOrder
-    role?: SortOrder
-  }
-
-  export type UserSumOrderByAggregateInput = {
-    id?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
+  export type BigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -4823,15 +4851,19 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type StringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
@@ -4850,42 +4882,52 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type ArticleCountOrderByAggregateInput = {
+  export type UserCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    content?: SortOrder
-    difficulty?: SortOrder
-    author?: SortOrder
-    publishedAt?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    emailVerified?: SortOrder
+    role?: SortOrder
   }
 
-  export type ArticleAvgOrderByAggregateInput = {
+  export type UserAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type ArticleMaxOrderByAggregateInput = {
+  export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    content?: SortOrder
-    difficulty?: SortOrder
-    author?: SortOrder
-    publishedAt?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    emailVerified?: SortOrder
+    role?: SortOrder
   }
 
-  export type ArticleMinOrderByAggregateInput = {
+  export type UserMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    content?: SortOrder
-    difficulty?: SortOrder
-    author?: SortOrder
-    publishedAt?: SortOrder
-    createdAt?: SortOrder
+    name?: SortOrder
+    email?: SortOrder
+    emailVerified?: SortOrder
+    role?: SortOrder
   }
 
-  export type ArticleSumOrderByAggregateInput = {
+  export type UserSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -4906,18 +4948,22 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
   export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -4934,89 +4980,7 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
-  }
-
-  export type WordsCountOrderByAggregateInput = {
-    id?: SortOrder
-    word?: SortOrder
-    translation?: SortOrder
-    definition?: SortOrder
-    partOfSpeech?: SortOrder
-    frequency?: SortOrder
-    examples?: SortOrder
-    pronunciation?: SortOrder
-  }
-
-  export type WordsAvgOrderByAggregateInput = {
-    id?: SortOrder
-    frequency?: SortOrder
-  }
-
-  export type WordsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    word?: SortOrder
-    translation?: SortOrder
-    definition?: SortOrder
-    partOfSpeech?: SortOrder
-    frequency?: SortOrder
-    pronunciation?: SortOrder
-  }
-
-  export type WordsMinOrderByAggregateInput = {
-    id?: SortOrder
-    word?: SortOrder
-    translation?: SortOrder
-    definition?: SortOrder
-    partOfSpeech?: SortOrder
-    frequency?: SortOrder
-    pronunciation?: SortOrder
-  }
-
-  export type WordsSumOrderByAggregateInput = {
-    id?: SortOrder
-    frequency?: SortOrder
-  }
-
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
-  export type WordsCreateexamplesInput = {
-    set: string[]
-  }
-
-  export type WordsUpdateexamplesInput = {
-    set?: string[]
-    push?: string | string[]
-  }
-
-  export type NestedIntFilter<$PrismaModel = never> = {
+  export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -5027,21 +4991,66 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type NestedStringFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringFilter<$PrismaModel> | string
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+  export type ArticleCountOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    difficulty?: SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+    source?: SortOrder
+    publishedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ArticleAvgOrderByAggregateInput = {
+    id?: SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+  }
+
+  export type ArticleMaxOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    difficulty?: SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+    source?: SortOrder
+    publishedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ArticleMinOrderByAggregateInput = {
+    id?: SortOrder
+    title?: SortOrder
+    content?: SortOrder
+    difficulty?: SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+    source?: SortOrder
+    publishedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type ArticleSumOrderByAggregateInput = {
+    id?: SortOrder
+    wordCount?: SortOrder
+    readingTime?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -5057,32 +5066,122 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type WordCountOrderByAggregateInput = {
+    id?: SortOrder
+    word?: SortOrder
+    translation?: SortOrder
+    definition?: SortOrder
+    partOfSpeech?: SortOrder
+    frequency?: SortOrder
+    examples?: SortOrder
+    pronunciation?: SortOrder
+    id_backup_text?: SortOrder
+  }
+
+  export type WordAvgOrderByAggregateInput = {
+    id?: SortOrder
+    frequency?: SortOrder
+  }
+
+  export type WordMaxOrderByAggregateInput = {
+    id?: SortOrder
+    word?: SortOrder
+    translation?: SortOrder
+    definition?: SortOrder
+    partOfSpeech?: SortOrder
+    frequency?: SortOrder
+    pronunciation?: SortOrder
+    id_backup_text?: SortOrder
+  }
+
+  export type WordMinOrderByAggregateInput = {
+    id?: SortOrder
+    word?: SortOrder
+    translation?: SortOrder
+    definition?: SortOrder
+    partOfSpeech?: SortOrder
+    frequency?: SortOrder
+    pronunciation?: SortOrder
+    id_backup_text?: SortOrder
+  }
+
+  export type WordSumOrderByAggregateInput = {
+    id?: SortOrder
+    frequency?: SortOrder
+  }
+
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type WordCreateexamplesInput = {
+    set: string[]
+  }
+
+  export type WordUpdateexamplesInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type NestedBigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -5099,15 +5198,18 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  export type NestedStringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
@@ -5119,6 +5221,44 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -5149,18 +5289,21 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -5175,6 +5318,47 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
 
