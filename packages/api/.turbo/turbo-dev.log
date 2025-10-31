@@ -1,0 +1,17 @@
+
+> @repo/api@0.0.0 dev
+> npm run build -- --watch
+
+
+> @repo/api@0.0.0 build
+> tsc -b -v --watch
+
+c[[90m4:52:31 PM[0m] Starting compilation in watch mode...
+
+[[90m4:52:31 PM[0m] Projects in this build: 
+    * tsconfig.json
+
+[[90m4:52:31 PM[0m] Project 'tsconfig.json' is out of date because output file 'dist/index.js' does not exist
+
+[[90m4:52:31 PM[0m] Building project '/Users/rickykiamilev/src/updated-cisc474-web-app/packages/api/tsconfig.json'...
+

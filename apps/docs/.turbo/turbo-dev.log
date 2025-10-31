@@ -1,0 +1,12 @@
+
+> docs@0.1.0 dev
+> next dev --turbopack --port 3002
+
+   [1m[38;2;173;127;168m▲ Next.js 15.5.6[39m[22m (Turbopack)
+   - Local:        http://localhost:3002
+   - Network:      http://128.4.178.198:3002
+
+ [32m[1m✓[22m[39m Starting...
+[Error: > Couldn't find any `pages` or `app` directory. Please create one under the project root]
+[?25h
+⠙[1G[0K
