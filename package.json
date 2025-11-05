@@ -32,7 +32,10 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@prisma/client": "latest",
+    "@tailwindcss/vite": "^4.1.16",
+    "@tanstack/react-router": "^1.134.12",
+    "tailwindcss": "^4.1.16"
   },
   "packageManager": "npm@10.9.0",
   "workspaces": [
