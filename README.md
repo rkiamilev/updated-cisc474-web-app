@@ -1,7 +1,5 @@
 # cisc474-project-starter
 
-A repo that you can fork to make new projects
-
 # Setup
 
 - Clone this repo
@@ -100,3 +98,9 @@ This Turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+| Endpoint         | Description    | Link                                                                           |
+| ---------------- | -------------- | ------------------------------------------------------------------------------ |
+| `GET /users`     | Get all users  | [https://kiamilev-updated-cisc474-web-app.onrender.com/users](https://kiamilev-updated-cisc474-web-app.onrender.com/users)     |
+| `GET /users/:id` | Get user by ID | [https://kiamilev-updated-cisc474-web-app.onrender.com/users/1](https://kiamilev-updated-cisc474-web-app.onrender.com/users/1) |
+
