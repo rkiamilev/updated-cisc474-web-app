@@ -1,56 +1,40 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
-import { Prisma, Article } from '@repo/database/generated/client';
+import { Article } from '@repo/database/generated/client';
+
+import { CreateArticleDto } from './dtos/create-article.dto';
+import { UpdateArticleDto } from './dtos/update-article.dto';
 
 @Injectable()
 export class ArticlesService {
-  constructor(private prisma: PrismaService) {}
+  private readonly _articles: Article[] = [
+    {
+      id: 1,
+      title: 'First Article',
+      content: 'This is the content of the first article.',
+      difficulty: 'Easy',
+      publishedAt: new Date('2024-01-01'),
+      createdAt: new Date('2024-01-01'),
+      author: 'Author A',
+    },
+  ];
 
-  async article(
-    articleWhereUniqueInput: Prisma.ArticleWhereUniqueInput,
-  ): Promise<Article | null> {
-    return this.prisma.article.findUnique({
-      where: articleWhereUniqueInput,
-    });
+  create(createArticleDto: CreateArticleDto) {
+    return `This action adds a new article ${createArticleDto}`;
   }
 
-  async articles(params: {
-    skip?: number;
-    take?: number;
-    cursor?: Prisma.ArticleWhereUniqueInput;
-    where?: Prisma.ArticleWhereInput;
-    orderBy?: Prisma.ArticleOrderByWithRelationInput;
-  }): Promise<Article[]> {
-    const { skip, take, cursor, where, orderBy } = params;
-    return this.prisma.Article.findMany({
-      skip,
-      take,
-      cursor,
-      where,
-      orderBy,
-    });
+  findAll() {
+    return this._articles;
   }
 
-  async createArticle(data: Prisma.ArticleCreateInput): Promise<Article> {
-    return this.prisma.Article.create({
-      data,
-    });
+  findOne(id: number) {
+    return `This action returns a #${id} article`;
   }
 
-  async updateArticle(params: {
-    where: Prisma.ArticleWhereUniqueInput;
-    data: Prisma.ArticleUpdateInput;
-  }): Promise<Article> {
-    const { where, data } = params;
-    return this.prisma.Article.update({
-      data,
-      where,
-    });
+  update(id: number, updateArticleDto: UpdateArticleDto) {
+    return `This action updates a #${id} article ${updateArticleDto}`;
   }
 
-  async deleteArticle(where: Prisma.ArticleWhereUniqueInput): Promise<Article> {
-    return this.prisma.Article.delete({
-      where,
-    });
+  remove(id: number) {
+    return `This action removes a #${id} article`;
   }
 }

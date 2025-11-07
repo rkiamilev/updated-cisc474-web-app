@@ -3,9 +3,9 @@
 > @repo/api@0.0.0 build
 > tsc -b -v
 
-[[90m7:26:27 PM[0m] Projects in this build: 
+[[90m12:23:22 PM[0m] Projects in this build: 
     * tsconfig.json
 
-[[90m7:26:27 PM[0m] Project 'tsconfig.json' is up to date because newest input 'src/index.ts' is older than output 'dist/tsconfig.tsbuildinfo'
+[[90m12:23:22 PM[0m] Project 'tsconfig.json' is up to date because newest input 'src/index.ts' is older than output 'dist/tsconfig.tsbuildinfo'
 
 ⠙[1G[0K
