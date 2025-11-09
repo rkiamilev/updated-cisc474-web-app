@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Article } from '../../../../packages/database/src/client'
+import { Article } from '@repo/database/generated/client';
 
 import { CreateArticleDto } from './dtos/create-article.dto';
 import { UpdateArticleDto } from './dtos/update-article.dto';
