@@ -4,8 +4,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "npm run build -- --watch",
-    "build": "tsc -b -v",
+    "types": "tsc -p tsconfig.types.json",
+    "dev": "tsup src/* --format cjs,esm --watch --onSuccess \"npm run types\"",
+    "build": "tsup src/* --format cjs,esm && npm run types",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
   },
   "main": "./dist/index.js",
