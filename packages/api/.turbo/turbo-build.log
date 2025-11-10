@@ -3,9 +3,11 @@
 > @repo/api@0.0.0 build
 > tsc -b -v
 
-[1G[0K[[90m7:36:29 PM[0m] Projects in this build: 
+[1G[0K[[90m11:52:27 PM[0m] Projects in this build: 
     * tsconfig.json
 
-[[90m7:36:29 PM[0m] Project 'tsconfig.json' is up to date because newest input 'src/index.ts' is older than output 'dist/links/dto/create-link.dto.js'
+[[90m11:52:27 PM[0m] Project 'tsconfig.json' is out of date because output 'dist/index.js' is older than input 'src/links/entities/link.entity.ts'
+
+[[90m11:52:27 PM[0m] Building project '/Users/rickykiamilev/src/updated-cisc474-web-app/packages/api/tsconfig.json'...
 
 [1G[0K⠙[1G[0K
