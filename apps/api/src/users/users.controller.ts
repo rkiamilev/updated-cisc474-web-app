@@ -18,17 +18,17 @@ export class UsersController {
 
   @Post()
   create(@Body() createUsersDto: CreateUsersDto) {
-    return this.usersService.create(createUsersDto);
+    return this.usersService.createUser(createUsersDto);
   }
 
   @Get()
   findAll() {
-    return this.usersService.findAll();
+    return this.usersService.users({});
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
+    return this.usersService.user({ id: +id });
   }
 
   @Patch(':id')
