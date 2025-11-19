@@ -8,36 +8,37 @@ import {
   Delete,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { User } from '@repo/database'
 
-import { CreateUsersDto } from './dtos/create-users.dto';
-import { updateUsersDto } from './dtos/update-users.dto';
+import { CreateUserDto } from './dtos/create-users.dto';
+import { updateUserDto } from './dtos/update-users.dto';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  create(@Body() createUsersDto: CreateUsersDto) {
-    return this.usersService.createUser(createUsersDto);
-  }
-
+   @Post()
+    addNewUser(@Body() createUserDto: CreateUserDto) {
+      return this.usersService.create(createUserDto);
+    }
+  
   @Get()
-  findAll() {
-    return this.usersService.users({});
+  findAll(): Promise<User[]> {
+    return this.usersService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.user({ id: +id });
+  findOne(@Param('id') id: string): Promise<User> {
+    return this.usersService.findOne(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUsersDto: updateUsersDto) {
-    return this.usersService.update(+id, updateUsersDto);
+  updateUser(@Param('id') id: string, @Body() updateUserDto: updateUserDto): Promise<User> {
+    return this.usersService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  removeUser(@Param('id') id: string): Promise<User> {
     return this.usersService.remove(+id);
   }
 }

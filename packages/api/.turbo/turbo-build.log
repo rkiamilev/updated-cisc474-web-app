@@ -3,21 +3,25 @@
 > @repo/api@0.0.0 build
 > tsup src/* --format cjs,esm && npm run types
 
-[1G[0K[34mCLI[39m Building entry: src/links/dto/create-link.dto.ts, src/links/dto/update-link.dto.ts, src/links/entities/link.entity.ts
+[1G[0K[34mCLI[39m Building entry: src/index.ts, src/links/entities/link.entity.ts, src/links/dto/create-link.dto.ts, src/links/dto/update-link.dto.ts
 [34mCLI[39m Using tsconfig: tsconfig.json
 [34mCLI[39m tsup v8.5.0
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mCJS[39m [1mdist/dto/create-link.dto.js  [22m[32m1.11 KB[39m
-[32mCJS[39m [1mdist/dto/update-link.dto.js  [22m[32m1.33 KB[39m
-[32mCJS[39m [1mdist/entities/link.entity.js [22m[32m1.29 KB[39m
-[32mCJS[39m ⚡️ Build success in 53ms
-[32mESM[39m [1mdist/dto/update-link.dto.mjs  [22m[32m240.00 B[39m
-[32mESM[39m [1mdist/dto/create-link.dto.mjs  [22m[32m85.00 B[39m
-[32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs       [22m[32m96.00 B[39m
-[32mESM[39m [1mdist/entities/link.entity.mjs [22m[32m305.00 B[39m
-[32mESM[39m ⚡️ Build success in 53ms
+[32mCJS[39m [1mdist/index.js                      [22m[32m1.51 KB[39m
+[32mCJS[39m [1mdist/links/entities/link.entity.js [22m[32m1.15 KB[39m
+[32mCJS[39m [1mdist/links/dto/create-link.dto.js  [22m[32m1.11 KB[39m
+[32mCJS[39m [1mdist/links/dto/update-link.dto.js  [22m[32m1.33 KB[39m
+[32mCJS[39m ⚡️ Build success in 60ms
+[32mESM[39m [1mdist/links/entities/link.entity.mjs [22m[32m70.00 B[39m
+[32mESM[39m [1mdist/links/dto/update-link.dto.mjs  [22m[32m123.00 B[39m
+[32mESM[39m [1mdist/chunk-3SFKBB2Y.mjs             [22m[32m240.00 B[39m
+[32mESM[39m [1mdist/links/dto/create-link.dto.mjs  [22m[32m88.00 B[39m
+[32mESM[39m [1mdist/chunk-JRBHLQRO.mjs             [22m[32m160.00 B[39m
+[32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs             [22m[32m96.00 B[39m
+[32mESM[39m [1mdist/index.mjs                      [22m[32m291.00 B[39m
+[32mESM[39m ⚡️ Build success in 60ms
 
 > @repo/api@0.0.0 types
 > tsc -p tsconfig.types.json
