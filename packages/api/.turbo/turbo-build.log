@@ -9,15 +9,15 @@
 [34mCLI[39m Target: es2022
 [34mCJS[39m Build start
 [34mESM[39m Build start
-[32mCJS[39m [1mdist/dto/create-link.dto.js  [22m[32m1.11 KB[39m
-[32mCJS[39m [1mdist/dto/update-link.dto.js  [22m[32m1.33 KB[39m
-[32mCJS[39m [1mdist/entities/link.entity.js [22m[32m1.29 KB[39m
-[32mCJS[39m ⚡️ Build success in 53ms
-[32mESM[39m [1mdist/dto/update-link.dto.mjs  [22m[32m240.00 B[39m
 [32mESM[39m [1mdist/dto/create-link.dto.mjs  [22m[32m85.00 B[39m
+[32mESM[39m [1mdist/dto/update-link.dto.mjs  [22m[32m240.00 B[39m
 [32mESM[39m [1mdist/chunk-SKDSOMIZ.mjs       [22m[32m96.00 B[39m
 [32mESM[39m [1mdist/entities/link.entity.mjs [22m[32m305.00 B[39m
-[32mESM[39m ⚡️ Build success in 53ms
+[32mESM[39m ⚡️ Build success in 59ms
+[32mCJS[39m [1mdist/dto/update-link.dto.js  [22m[32m1.33 KB[39m
+[32mCJS[39m [1mdist/entities/link.entity.js [22m[32m1.29 KB[39m
+[32mCJS[39m [1mdist/dto/create-link.dto.js  [22m[32m1.11 KB[39m
+[32mCJS[39m ⚡️ Build success in 59ms
 
 > @repo/api@0.0.0 types
 > tsc -p tsconfig.types.json
